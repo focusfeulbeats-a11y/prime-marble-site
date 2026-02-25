@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Marble Worktops & Stone Installation London | Prime Marble Specialists</title>
+
+<meta name="description" content="Marble worktops, bathrooms, feature walls, porcelain and ceramic tiling installation in London. Professional marble & stone specialists serving Central & Greater London. Call 07979 515900 for a free quote.">
+
+<meta name="keywords" content="marble worktops London, stone installation London, marble bathroom London, porcelain tiling London, ceramic tiling London, feature wall stone London, onyx London">
+<meta name="author" content="Prime Marble Specialists">
+
+<meta property="og:title" content="Prime Marble Specialists | Marble, Stone & Tiling London">
+<meta property="og:description" content="Marble worktops, bathrooms, feature walls, porcelain & ceramic tiling across London & Greater London. Call 07979 515900.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/project-05.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="images/favicon.png" />
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --orange:#ff6a00;
+  --orange2:#ff9a3d;
+  --dark:#0c0c0c;
+  --muted:#555;
+  --border: rgba(0,0,0,.08);
+  --shadow: 0 25px 60px rgba(0,0,0,.10);
+  --shadowSoft: 0 12px 30px rgba(0,0,0,.08);
+  --radius: 18px;
+  --max: 1200px;
+  --sans: 'Inter', sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--dark);
+  background:
+    linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)),
+    url("images/marble-bg.jpg") center/cover fixed no-repeat;
+}
+
+a{color:inherit}
+.container{width:90%; max-width:var(--max); margin:auto}
+
+/* Typography */
+h1,h2,h3{
+  font-family:'Playfair Display', serif;
+  letter-spacing:-0.5px;
+}
+h1{
+  font-size:56px;
+  line-height:1.05;
+  margin:14px 0 18px;
+}
+h2{
+  font-size:36px;
+  margin:0 0 16px;
+}
+.lead{
+  margin:0;
+  font-size:18px;
+  color:var(--muted);
+  max-width:68ch;
+  line-height:1.65;
+}
+.small{font-size:14px; color:var(--muted)}
+
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.85);
+  backdrop-filter: blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 0;
+  gap:14px;
+}
+.logo img{
+  width:240px;
+  height:auto;
+  display:block;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.06));
+}
+
+/* Nav */
+nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+nav a{
+  text-decoration:none;
+  font-weight:650;
+  color:var(--muted);
+  padding:9px 12px;
+  border-radius:12px;
+  transition: all .25s ease;
+}
+nav a:hover{color:var(--dark); background: rgba(0,0,0,.05)}
+
+.menuWrap{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.drop{position:relative}
+.drop > a{display:inline-flex; align-items:center; gap:8px}
+.drop > a:after{content:"▾"; font-size:12px; opacity:.7}
+
+/* Dropdown panel */
+.panel{
+  position:absolute;
+  right:0;
+  top:44px;
+  width:min(420px, 92vw);
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  padding:12px;
+  display:none;
+}
+.drop:hover .panel{display:block}
+.panelGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+}
+.pItem{
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+  padding:12px;
+  text-decoration:none;
+  display:block;
+  background: rgba(255,255,255,.85);
+  transition: all .25s ease;
+}
+.pItem strong{display:block; font-size:14px; color:var(--dark); font-family:var(--sans); letter-spacing:0}
+.pItem span{display:block; margin-top:4px; font-size:12px; color:var(--muted)}
+.pItem:hover{transform: translateY(-2px); box-shadow: var(--shadowSoft)}
+
+/* Buttons */
+.btnRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 20px;
+  text-decoration:none;
+  font-weight:750;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.92);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadowSoft);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn:hover{transform: translateY(-3px)}
+.btnPrimary{
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--orange), var(--orange2));
+  color:#1a120b;
+}
+.btnPrimary:hover{box-shadow: 0 20px 50px rgba(255,106,0,.35)}
+.btnDark{
+  border-color: transparent;
+  background:#111;
+  color:#fff;
+}
+.btnDark:hover{box-shadow: 0 20px 50px rgba(0,0,0,.35)}
+
+/* Badge */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  border-radius:999px;
+  background: rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.08);
+  color:var(--muted);
+  font-size:14px;
+  font-family:var(--sans);
+  letter-spacing:0;
+}
+
+/* Sections */
+.section{padding:90px 0}
+hr.sep{
+  border:0;
+  height:1px;
+  background: rgba(0,0,0,.08);
+  margin:0;
+}
+
+/* Hero */
+.hero{padding:90px 0 60px}
+.heroGrid{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap:40px;
+  align-items:stretch;
+}
+.heroCard{
+  height:520px;
+  border-radius: var(--radius);
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  position:relative;
+  background:#fff;
+}
+.heroCard::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.62)),
+    url("images/project-05.jpg") center/cover no-repeat;
+  transform: scale(1.02);
+}
+.heroCardInner{
+  position:relative;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:18px;
+  color:#fff;
+}
+.heroTag{
+  display:inline-flex;
+  width:fit-content;
+  padding:8px 12px;
+  border-radius:999px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.22);
+  font-size:14px;
+  font-family:var(--sans);
+  letter-spacing:0;
+}
+.heroMeta{margin-top:10px; font-weight:850; font-size:18px; font-family:var(--sans); letter-spacing:0}
+.heroMeta2{margin-top:4px; font-size:14px; opacity:.92; font-family:var(--sans); letter-spacing:0}
+
+/* KPIs */
+.kpis{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+  margin-top:18px;
+}
+.kpi{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadowSoft);
+  padding:16px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.kpi:hover{transform: translateY(-4px); box-shadow: var(--shadow)}
+.kpi strong{display:block; font-size:16px; font-family:var(--sans); letter-spacing:0}
+.kpi span{display:block; margin-top:6px; color:var(--muted); font-size:14px}
+
+/* Grids */
+.cardGrid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:24px;
+  margin-top:26px;
+}
+.card{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadowSoft);
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(6px);
+  padding:24px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.card:hover{transform: translateY(-6px); box-shadow: var(--shadow)}
+.card h3{margin:0 0 8px; font-family:'Playfair Display', serif}
+.card p{margin:0; color:var(--muted); font-size:16px; line-height:1.6; font-family:var(--sans); letter-spacing:0}
+
+/* Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:20px;
+  margin-top:26px;
+}
+.gItem{
+  border-radius: var(--radius);
+  overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow: var(--shadowSoft);
+  background: rgba(255,255,255,.92);
+  cursor:pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.gItem:hover{transform: translateY(-6px); box-shadow: var(--shadow)}
+.gItem img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  display:block;
+  transition: transform .35s ease;
+}
+.gItem:hover img{transform: scale(1.03)}
+.cap{padding:10px 12px; font-size:14px; color:var(--muted); font-family:var(--sans); letter-spacing:0}
+
+/* Split + Quote */
+.split{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:24px;
+  margin-top:26px;
+}
+.quote{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:24px;
+  margin-top:26px;
+}
+label{display:block; font-weight:800; margin:10px 0 6px; font-family:var(--sans); letter-spacing:0}
+input, textarea, select{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,.12);
+  font-size:15px;
+  background: rgba(255,255,255,.95);
+  outline:none;
+}
+input:focus, textarea:focus, select:focus{
+  border-color: rgba(255,106,0,.55);
+  box-shadow: 0 0 0 4px rgba(255,106,0,.12);
+}
+textarea{min-height:140px; resize:vertical}
+
+/* Map */
+.mapWrap{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: var(--shadowSoft);
+  margin-top:26px;
+}
+
+/* Footer */
+footer{
+  padding:70px 0;
+  border-top:1px solid var(--border);
+  text-align:center;
+  background:rgba(255,255,255,.85);
+  backdrop-filter: blur(10px);
+}
+
+/* Lightbox */
+#lightbox{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.86);
+  display:none; align-items:center; justify-content:center;
+  padding:20px; z-index:9999;
+}
+#lightbox img{
+  max-width:95vw; max-height:90vh;
+  border-radius:16px;
+  box-shadow: 0 30px 70px rgba(0,0,0,.35);
+}
+
+/* Sticky CTA */
+.stickyCta{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:120;
+}
+.stickyCta a{
+  border-radius:999px;
+  padding:12px 14px;
+  font-weight:850;
+}
+
+/* Reveal */
+.reveal{opacity:0; transform: translateY(25px); transition: opacity .8s ease, transform .8s ease}
+.reveal.show{opacity:1; transform:none}
+
+/* Responsive */
+@media(max-width: 980px){
+  h1{font-size:42px}
+  h2{font-size:32px}
+  .heroGrid{grid-template-columns:1fr}
+  .heroCard{height:380px}
+  .gallery{grid-template-columns:1fr}
+  .cardGrid{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr}
+  .quote{grid-template-columns:1fr}
+  .logo img{width:180px}
+  .panelGrid{grid-template-columns:1fr}
+  .drop:hover .panel{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo"><img src="images/logo.png" alt="Prime Marble Specialists"></div>
+
+    <nav class="menuWrap">
+      <a href="index.html">Home</a>
+
+      <div class="drop">
+        <a href="#services">Services</a>
+        <div class="panel" aria-label="Services menu">
+          <div class="panelGrid">
+            <a class="pItem" href="#kitchens"><strong>Kitchens</strong><span>Worktops, islands, splashbacks</span></a>
+            <a class="pItem" href="#bathrooms"><strong>Bathrooms</strong><span>Vanities, walls, showers</span></a>
+            <a class="pItem" href="#features"><strong>Feature Walls</strong><span>Bookmatching, statement stone</span></a>
+            <a class="pItem" href="#flooring"><strong>Flooring & Stairs</strong><span>Stone floors, steps, thresholds</span></a>
+          </div>
+        </div>
+      </div>
+
+      <a href="work.html">Our Work</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<div class="stickyCta">
+  <a class="btn btnPrimary" href="tel:+447979515900">Call</a>
+  <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp</a>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container heroGrid">
+
+      <div class="reveal">
+        <div class="badge">London • Marble • Natural Stone • Porcelain • Ceramic</div>
+
+        <h1>Premium marble, stone and tiling — finished to an exceptional standard.</h1>
+
+        <p class="lead">
+          Prime Marble Specialists deliver luxury marble worktops, bathrooms, flooring and feature walls —
+          plus professional porcelain and ceramic tiling for kitchens, bathrooms and renovations.
+          Precision templating, clean installation, and a refined finish across London & Greater London.
+        </p>
+
+        <div class="btnRow">
+          <a class="btn btnPrimary" href="tel:+447979515900">Call 07979 515900</a>
+          <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
+          <a class="btn" href="#quote">Get a free quote</a>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi"><strong>Fast response</strong><span>WhatsApp photos + postcode</span></div>
+          <div class="kpi"><strong>Premium finish</strong><span>Tight lines, clean edges, neat grouting</span></div>
+          <div class="kpi"><strong>London focused</strong><span>Central + Greater London</span></div>
+        </div>
+      </div>
+
+      <div class="heroCard reveal">
+        <div class="heroCardInner">
+          <div class="heroTag">✨ Featured: statement stonework</div>
+          <div class="heroMeta">Recent London installation</div>
+          <div class="heroMeta2">Click photos below to view full screen</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="reveal">Services</h2>
+      <p class="lead reveal">Luxury stonework and high-quality tiling for kitchens, bathrooms, floors and feature walls.</p>
+
+      <div class="cardGrid">
+        <div class="card reveal" id="kitchens">
+          <h3>Kitchens</h3>
+          <p>Worktops, islands and splashbacks — planned for clean seams and strong veining flow.</p>
+        </div>
+        <div class="card reveal" id="bathrooms">
+          <h3>Bathrooms</h3>
+          <p>Vanities, wall cladding and shower surrounds — refined finishes built for daily use.</p>
+        </div>
+        <div class="card reveal" id="features">
+          <h3>Feature walls</h3>
+          <p>Statement stonework, bookmatching and premium detailing — including onyx and backlit options.</p>
+        </div>
+      </div>
+
+      <div class="cardGrid">
+        <div class="card reveal" id="flooring">
+          <h3>Flooring & stairs</h3>
+          <p>Stone floors, steps and thresholds with tight tolerances and a clean edge finish.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Porcelain & ceramic tiling</h3>
+          <p>Walls and floors for kitchens, bathrooms and renovations — level lines, neat grout, clean edges.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Trade support</h3>
+          <p>For builders & designers: reliable scheduling, clear comms, and professional delivery.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="card reveal">
+          <h3>How it works</h3>
+          <p class="small">
+            1) WhatsApp photos + postcode<br>
+            2) We advise and estimate<br>
+            3) Measure / confirm<br>
+            4) Install & finish
+          </p>
+        </div>
+        <div class="card reveal">
+          <h3>What we need for a quote</h3>
+          <p class="small">
+            • Postcode<br>
+            • Photos of the space<br>
+            • Rough sizes (if you have them)<br>
+            • Project type + timeline
+          </p>
+        </div>
+      </div>
+
+      <div class="btnRow reveal" style="margin-top:18px;">
+        <a class="btn btnPrimary" href="#quote">Get a free quote</a>
+        <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Our Approach</h2>
+      <p class="lead reveal">
+        We operate as a specialist installation team, partnering with dedicated fabrication workshops.
+        This allows us to focus entirely on precision fitting and on-site finishing — while keeping costs efficient and competitive for our clients.
+      </p>
+
+      <div class="cardGrid">
+        <div class="card reveal">
+          <h3>Installation Specialists</h3>
+          <p>Our core expertise is on-site installation — accurate alignment, clean edges, neat grouting, and refined finishing.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Trusted Fabrication Partners</h3>
+          <p>We coordinate fabrication through trusted workshops with advanced machinery for precise cutting and preparation.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Better Value, Same Quality</h3>
+          <p>With a lean setup and no inflated showroom costs, we deliver premium results at competitive pricing.</p>
+        </div>
+      </div>
+
+      <div class="btnRow reveal" style="margin-top:18px;">
+        <a class="btn btnPrimary" href="#quote">Get a quote</a>
+        <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <!-- BEFORE / AFTER SLIDER -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Before & After</h2>
+      <p class="lead reveal">Clean installation. Precise alignment. Professional finishing.</p>
+
+      <div class="beforeAfter reveal">
+        <div class="ba-wrap">
+          <img src="images/before.jpg" alt="Before installation" class="ba-before">
+          <img src="images/after.jpg" alt="After installation" class="ba-after">
+          <div class="ba-slider" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="btnRow reveal" style="margin-top:20px;">
+        <a class="btn btnPrimary" href="#quote">Get a quote</a>
+        <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <!-- RECENT WORK -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Recent work</h2>
+      <p class="lead reveal">Click any photo to enlarge.</p>
+
+      <div class="gallery">
+        <div class="gItem reveal"><img src="images/project-01.jpg" data-full="images/project-01.jpg" alt="Marble installation in London" loading="lazy"><div class="cap">Marble installation</div></div>
+        <div class="gItem reveal"><img src="images/project-02.jpg" data-full="images/project-02.jpg" alt="Stone steps installation in London" loading="lazy"><div class="cap">Stone steps / exterior</div></div>
+        <div class="gItem reveal"><img src="images/project-03.jpg" data-full="images/project-03.jpg" alt="Luxury bathroom stonework in London" loading="lazy"><div class="cap">Luxury bathroom</div></div>
+        <div class="gItem reveal"><img src="images/project-04.jpg" data-full="images/project-04.jpg" alt="Shower feature stonework in London" loading="lazy"><div class="cap">Shower feature</div></div>
+        <div class="gItem reveal"><img src="images/project-05.jpg" data-full="images/project-05.jpg" alt="Backlit onyx feature wall in London" loading="lazy"><div class="cap">Backlit onyx feature</div></div>
+        <div class="gItem reveal"><img src="images/project-06.jpg" data-full="images/project-06.jpg" alt="Vanity or worktop installation in London" loading="lazy"><div class="cap">Vanity / worktop</div></div>
+      </div>
+
+      <div class="btnRow reveal" style="margin-top:18px;">
+        <a class="btn" href="work.html">View all projects</a>
+        <a class="btn btnPrimary" href="#quote">Get a quote</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <!-- QUOTE FORM (UPDATED TO BASIN) -->
+  <section class="section" id="quote">
+    <div class="container">
+      <h2 class="reveal">Get a free quote</h2>
+      <p class="lead reveal">Fill this in and we’ll get back to you. Or WhatsApp photos for the fastest response.</p>
+
+      <div class="quote">
+        <div class="card reveal">
+
+          <!-- BASIN FORM -->
+          <form action="https://usebasin.com/f/740588ce5ce8" method="POST">
+            <label>Full name</label>
+            <input name="name" required placeholder="Your name">
+
+            <label>Phone</label>
+            <input name="phone" required placeholder="079..">
+
+            <label>Email (optional)</label>
+            <input name="email" type="email" placeholder="you@email.com">
+
+            <label>Postcode</label>
+            <input name="postcode" required placeholder="e.g. SW1, E14, W3">
+
+            <label>Project type</label>
+            <select name="project">
+              <option>Kitchen worktops</option>
+              <option>Bathroom</option>
+              <option>Porcelain / ceramic tiling</option>
+              <option>Flooring / stairs</option>
+              <option>Feature wall / onyx</option>
+              <option>Trade / commercial</option>
+              <option>Other</option>
+            </select>
+
+            <label>Message</label>
+            <textarea name="message" placeholder="Rough sizes, timeline, material preference. You can WhatsApp photos too."></textarea>
+
+            <!-- Helpful hidden fields -->
+            <input type="hidden" name="source" value="Prime Marble Specialists website">
+            <input type="hidden" name="page" value="index">
+
+            <div class="btnRow" style="margin-top:12px;">
+              <button type="submit" class="btn btnPrimary" style="border:none; cursor:pointer;">Send request</button>
+              <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
+            </div>
+
+            <p class="small" style="margin-top:10px;">Submissions are delivered via Basin.</p>
+          </form>
+          <!-- /BASIN FORM -->
+
+        </div>
+
+        <div class="card reveal">
+          <h3>Fast-track quotes</h3>
+          <p class="small">
+            For the quickest estimate, WhatsApp:<br>
+            • Photos of the space<br>
+            • Postcode<br>
+            • Rough sizes (if you know them)<br>
+            • Any inspiration photos
+          </p>
+
+          <div class="btnRow" style="margin-top:14px;">
+            <a class="btn btnPrimary" href="tel:+447979515900">Call 07979 515900</a>
+            <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp now</a>
+          </div>
+
+          <div class="card" style="margin-top:14px;">
+            <h3>Who we work with</h3>
+            <p class="small">Homeowners • Builders • Interior designers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <!-- GUIDES -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Latest guides</h2>
+      <p class="lead reveal">Short tips on care, design and planning — written in a professional style.</p>
+
+      <div class="cardGrid">
+        <div class="card reveal">
+          <h3>How to care for marble</h3>
+          <p class="small">Simple daily care + what to avoid to keep surfaces looking new.</p>
+          <p style="margin-top:12px;"><a href="blog.html#care" style="font-weight:800; text-decoration:none; font-family:var(--sans);">Read →</a></p>
+        </div>
+        <div class="card reveal">
+          <h3>Designing a kitchen with stone</h3>
+          <p class="small">Choosing finishes, edges, and layouts that look premium.</p>
+          <p style="margin-top:12px;"><a href="blog.html#kitchen" style="font-weight:800; text-decoration:none; font-family:var(--sans);">Read →</a></p>
+        </div>
+        <div class="card reveal">
+          <h3>Bathroom stone: best options</h3>
+          <p class="small">What works in wet areas + sealing and maintenance tips.</p>
+          <p style="margin-top:12px;"><a href="blog.html#bathroom" style="font-weight:800; text-decoration:none; font-family:var(--sans);">Read →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <!-- AREAS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">London & Greater London</h2>
+      <p class="lead reveal">Central, North, South, East & West London • Greater London.</p>
+
+      <div class="mapWrap reveal">
+        <iframe
+          src="https://www.google.com/maps?q=London&output=embed"
+          width="100%"
+          height="360"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="card reveal" style="margin-top:16px;">
+        <h3>Areas covered</h3>
+        <p class="small">
+          Westminster • Kensington & Chelsea • Camden • Islington • Hackney • Tower Hamlets • Southwark • Lambeth •
+          Wandsworth • Hammersmith & Fulham • Ealing • Brent • Barnet • Greenwich • and surrounding areas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <h2 class="reveal">Ready to discuss your project?</h2>
+    <p class="lead reveal">Call or WhatsApp with your postcode + photos — we’ll reply quickly.</p>
+
+    <div class="btnRow reveal" style="justify-content:center;">
+      <a class="btn btnPrimary" href="tel:+447979515900">Call 07979 515900</a>
+      <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp</a>
+      <a class="btn" href="#quote">Free quote</a>
+    </div>
+
+    <p class="small" style="margin-top:18px;">© 2026 Prime Marble Specialists • London</p>
+  </div>
+</footer>
+
+<div id="lightbox" role="dialog" aria-hidden="true"><img alt="Expanded project photo"></div>
+
+<script>
+(function () {
+  /* LIGHTBOX (gallery images) */
+  const lb = document.getElementById("lightbox");
+  const lbImg = lb ? lb.querySelector("img") : null;
+
+  function openLightbox(src, alt) {
+    if (!lb || !lbImg) return;
+    lbImg.src = src;
+    lbImg.alt = alt || "Project photo";
+    lb.style.display = "flex";
+    lb.setAttribute("aria-hidden", "false");
+  }
+
+  function closeLightbox() {
+    if (!lb || !lbImg) return;
+    lb.style.display = "none";
+    lbImg.src = "";
+    lb.setAttribute("aria-hidden", "true");
+  }
+
+  if (lb) {
+    lb.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+
+    document.querySelectorAll(".gItem img").forEach((img) => {
+      img.addEventListener("click", () => {
+        openLightbox(img.getAttribute("data-full") || img.src, img.alt);
+      });
+    });
+  }
+
+  /* BEFORE / AFTER SLIDER */
+  const wrap = document.querySelector(".ba-wrap");
+  if (wrap) {
+    const after = wrap.querySelector(".ba-after");
+    const slider = wrap.querySelector(".ba-slider");
+
+    if (after && slider) {
+      function setFromClientX(clientX) {
+        const rect = wrap.getBoundingClientRect();
+        let x = clientX - rect.left;
+        if (x < 0) x = 0;
+        if (x > rect.width) x = rect.width;
+        const pct = (x / rect.width) * 100;
+        after.style.width = pct + "%";
+        slider.style.left = pct + "%";
+      }
+
+      const r = wrap.getBoundingClientRect();
+      setFromClientX(r.left + r.width / 2);
+
+      wrap.addEventListener("mousemove", (e) => setFromClientX(e.clientX));
+      wrap.addEventListener("click", (e) => setFromClientX(e.clientX));
+      wrap.addEventListener(
+        "touchmove",
+        (e) => {
+          if (e.touches && e.touches[0]) setFromClientX(e.touches[0].clientX);
+        },
+        { passive: true }
+      );
+    }
+  }
+
+  /* REVEAL ON SCROLL */
+  const els = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) en.target.classList.add("show");
+        });
+      },
+      { threshold: 0.12 }
+    );
+    els.forEach((el) => io.observe(el));
+  } else {
+    els.forEach((el) => el.classList.add("show"));
+  }
+})();
+</script>
+
+</body>
+</html>
