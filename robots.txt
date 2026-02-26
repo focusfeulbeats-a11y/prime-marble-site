@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap:https://usebasin.com/f/740588ce5ce8
+User-agent: *
+Allow: /
+
+Sitemap: https://prime-marble-site-74qm-pcd1dsl9c-edgar-vieiras-projects.vercel.app/sitemap.xml
