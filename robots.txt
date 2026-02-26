@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap:https://usebasin.com/f/740588ce5ce8
