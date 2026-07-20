@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prime-marble-site-74qm-pcd1dsl9c-edgar-vieiras-projects.vercel.app/sitemap.xml
