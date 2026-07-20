@@ -3,237 +3,192 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Marble Worktops London | Kitchen Worktop Installation | Prime Marble Specialists</title>
-<meta name="description" content="Marble worktop supply and installation across London. Carrara, Calacatta, Statuario and more — precision templating, clean seams, professional fitting. Call 07979 515900.">
-<meta name="keywords" content="marble worktops London, marble kitchen worktops, Calacatta worktop London, Carrara marble worktop, stone worktop installation London">
-<link rel="canonical" href="https://prime-marble-site.vercel.app/marble-worktops-london.html">
-<meta property="og:title" content="Marble Worktops London | Prime Marble Specialists">
-<meta property="og:description" content="Marble kitchen worktop installation across London. Precision templating, clean seams, professional fitting.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/project-01.jpg">
-<meta name="twitter:card" content="summary_large_image">
+<title>Marble Worktops London | Prime Marble Specialists</title>
+<meta name="description" content="Marble worktops installed across London & Greater London. Precise fitting, clean edges, professional finishing. Call 07979 515900 for a quote." />
 <link rel="icon" type="image/png" href="images/favicon.png" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-<style>:root{ --pageHeroImg: url("images/project-01.jpg"); }</style>
+
+<style>
+:root{--orange:#ff6a00;--orange2:#ff9a3d;--dark:#0c0c0c;--muted:#555;--border:rgba(0,0,0,.08);--shadow:0 25px 60px rgba(0,0,0,.10);--shadowSoft:0 12px 30px rgba(0,0,0,.08);--radius:18px;--max:1200px;--sans:'Inter',sans-serif}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--dark);background:linear-gradient(rgba(255,255,255,.93),rgba(255,255,255,.93)),url("images/marble-bg.jpg") center/cover fixed no-repeat}
+a{color:inherit}
+.container{width:90%;max-width:var(--max);margin:auto}
+h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-0.5px}
+h1{font-size:52px;line-height:1.05;margin:14px 0 18px}
+h2{font-size:34px;margin:0 0 16px}
+.lead{margin:0;font-size:18px;color:var(--muted);max-width:68ch;line-height:1.65}
+.small{font-size:14px;color:var(--muted);line-height:1.6}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:14px}
+.logo img{width:240px;height:auto;display:block;filter:drop-shadow(0 10px 20px rgba(0,0,0,.06))}
+nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;font-weight:650;color:var(--muted);padding:9px 12px;border-radius:12px;transition:.2s}
+nav a:hover{color:var(--dark);background:rgba(0,0,0,.05)}
+.section{padding:80px 0}
+.cardGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}
+.card{border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadowSoft);background:rgba(255,255,255,.92);backdrop-filter:blur(6px);padding:24px;transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.btnRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;text-decoration:none;font-weight:750;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.92);box-shadow:var(--shadowSoft);transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-3px)}
+.btnPrimary{border-color:transparent;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#1a120b}
+.btnPrimary:hover{box-shadow:0 20px 50px rgba(255,106,0,.35)}
+.btnDark{border-color:transparent;background:#111;color:#fff}
+.btnDark:hover{box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:stretch}
+.heroImg{height:420px;border-radius:var(--radius);box-shadow:var(--shadow);background:url("images/project-01.jpg") center/cover no-repeat;border:1px solid var(--border)}
+.list{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
+
+/* Material showcase */
+.materialGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.materialCard{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadowSoft);background:rgba(255,255,255,.92);transition:transform .3s ease}
+.materialCard:hover{transform:translateY(-4px)}
+.materialCard .mImg{height:160px;background:linear-gradient(135deg,#f5f5f5,#e0e0e0);display:flex;align-items:center;justify-content:center;font-size:48px}
+.materialCard .mInfo{padding:14px}
+.materialCard .mInfo h4{margin:0 0 4px;font-family:'Playfair Display',serif;font-size:16px}
+.materialCard .mInfo p{margin:0;font-size:13px;color:var(--muted)}
+
+footer{padding:60px 0;border-top:1px solid var(--border);text-align:center;background:rgba(255,255,255,.85);backdrop-filter:blur(10px)}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:980px){h1{font-size:40px}.hero{grid-template-columns:1fr}.cardGrid{grid-template-columns:1fr}.materialGrid{grid-template-columns:repeat(2,1fr)}.logo img{width:180px}}
+</style>
+
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Marble worktop installation",
-  "provider": {"@type":"HomeAndConstructionBusiness","name":"Prime Marble Specialists","telephone":"+447979515900"},
-  "areaServed": "London"
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"Prime Marble Specialists",
+  "areaServed":"London, Greater London",
+  "telephone":"+447979515900",
+  "url":"./",
+  "serviceType":["Marble worktop installation","Stone installation"]
 }
 </script>
 </head>
+
 <body>
-<a class="skip" href="#main">Skip to content</a>
 <header>
-<div class="container nav">
-<a class="logo" href="index.html"><img src="images/logo.png" alt="Prime Marble Specialists"></a>
-<button class="navToggle" aria-expanded="false" aria-controls="siteMenu">Menu ☰</button>
-<nav class="menuWrap" id="siteMenu">
-<a href="index.html">Home</a>
-<div class="drop">
-<a href="index.html#services">Services</a>
-<div class="panel" aria-label="Services menu">
-<div class="panelGrid">
-<a class="pItem" href="index.html#kitchens"><strong>Kitchens</strong><span>Worktops, islands, splashbacks</span></a>
-<a class="pItem" href="index.html#bathrooms"><strong>Bathrooms</strong><span>Vanities, walls, showers</span></a>
-<a class="pItem" href="index.html#features"><strong>Feature Walls</strong><span>Bookmatching, statement stone</span></a>
-<a class="pItem" href="index.html#flooring"><strong>Flooring & Stairs</strong><span>Stone floors, steps, thresholds</span></a>
-</div>
-</div>
-</div>
-<a href="work.html">Our Work</a>
-<a href="marble-worktops-london.html" aria-current="page">Marble Worktops</a>
-<a href="porcelain-tiling-london.html">Porcelain Tiling</a>
-<a href="contact.html">Contact</a>
-<a href="blog.html">Blog</a>
-</nav>
-</div>
+  <div class="container nav">
+    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Prime Marble Specialists"></a></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="porcelain-tiling-london.html">Porcelain Tiling</a>
+      <a href="work.html">Our Work</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<div class="stickyCta">
-<a class="btn btnPrimary" href="tel:+447979515900">Call</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp</a>
-</div>
+<main>
+  <section class="section">
+    <div class="container hero">
+      <div>
+        <h1>Marble Worktops in London</h1>
+        <p class="lead">
+          Precision installation for kitchens and islands &mdash; clean edges, accurate alignment and a refined finish.
+          Serving Central London and Greater London.
+        </p>
 
-<main id="main">
-<section class="pageHero">
-<div class="container">
-<p class="breadcrumb"><a href="index.html">Home</a> / Marble Worktops</p>
-<h1>Marble worktops, installed to a premium standard across London</h1>
-<p class="lead">Precision templating, clean seams and a refined finish — for kitchens, islands and utility spaces throughout Central & Greater London.</p>
-<div class="btnRow">
-<a class="btn btnPrimary" href="tel:+447979515900">Call 07979 515900</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
-</div>
-</div>
-</section>
+        <div class="btnRow">
+          <a class="btn btnPrimary" href="tel:+447979515900">Call 07979 515900</a>
+          <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
+        </div>
 
-<section class="section" style="padding-top:56px;">
-<div class="container">
-<h2 class="reveal">Why choose marble for your worktop</h2>
-<p class="lead reveal">Marble brings a natural depth of veining and a soft, luxurious finish no man-made surface fully replicates. It's a statement material — and with the right sealing and care, it performs beautifully in a real family kitchen.</p>
-<div class="cardGrid">
-<div class="card reveal">
-<h3>Natural veining</h3>
-<p>No two slabs are alike. We help you choose and match veining flow across joins so the worktop reads as one continuous piece.</p>
-</div>
-<div class="card reveal">
-<h3>Precision templating</h3>
-<p>We template on site to the millimetre — accounting for appliances, sinks and hob cut-outs before a single cut is made.</p>
-</div>
-<div class="card reveal">
-<h3>Clean, tight seams</h3>
-<p>Careful edge preparation and colour-matched resin keep joins as close to invisible as physically possible.</p>
-</div>
-</div>
-</div>
-</section>
+        <ul class="list">
+          <li>Kitchen worktops &amp; islands</li>
+          <li>Splashbacks &amp; upstands</li>
+          <li>Premium finishing &amp; tidy handover</li>
+          <li>Install-focused team (fabrication coordinated via trusted partners)</li>
+        </ul>
+      </div>
 
-<hr class="sep">
+      <div class="heroImg" aria-label="Marble worktop installation example"></div>
+    </div>
+  </section>
 
-<section class="section">
-<div class="container">
-<h2 class="reveal">Popular marble types</h2>
-<p class="lead reveal">A few of the marbles we install most often in London kitchens.</p>
-<div class="cardGrid">
-<div class="card reveal">
-<h3>Carrara</h3>
-<p>Soft grey veining on a white-grey base. A timeless, versatile classic that suits most kitchen styles.</p>
-</div>
-<div class="card reveal">
-<h3>Calacatta</h3>
-<p>Bolder, more dramatic gold or grey veining on a brighter white base — a true statement worktop.</p>
-</div>
-<div class="card reveal">
-<h3>Statuario</h3>
-<p>Bright white background with striking, sculptural veining. A premium choice for feature islands.</p>
-</div>
-</div>
-</div>
-</section>
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <h2 class="reveal">What to expect</h2>
+      <div class="cardGrid">
+        <div class="card reveal">
+          <h3>Advice &amp; estimate</h3>
+          <p class="small">Send photos, postcode and rough sizes. We&apos;ll advise on finish and give a clear estimate.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Measure &amp; plan</h3>
+          <p class="small">We confirm requirements and plan seams, edges and cut-outs for a premium result.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Install &amp; finish</h3>
+          <p class="small">Careful fitting, clean edges, tidy sealing and professional handover.</p>
+        </div>
+      </div>
 
-<hr class="sep">
+      <div class="btnRow reveal">
+        <a class="btn btnPrimary" href="contact.html">Get a free quote</a>
+        <a class="btn" href="work.html">See recent work</a>
+      </div>
+    </div>
+  </section>
 
-<section class="section">
-<div class="container">
-<h2 class="reveal">Our installation process</h2>
-<div class="split">
-<div class="card reveal">
-<h3>1. WhatsApp photos + postcode</h3>
-<p class="small">Send us photos of the space and rough dimensions to get started.</p>
-</div>
-<div class="card reveal">
-<h3>2. Advice & estimate</h3>
-<p class="small">We talk through material options and give you an honest estimate.</p>
-</div>
-</div>
-<div class="split">
-<div class="card reveal">
-<h3>3. Templating & confirm</h3>
-<p class="small">We template precisely on site once the base units are in place.</p>
-</div>
-<div class="card reveal">
-<h3>4. Install & finish</h3>
-<p class="small">Careful fitting, tight seams and a full clean finish before we leave.</p>
-</div>
-</div>
-<div class="btnRow reveal" style="margin-top:18px;">
-<a class="btn btnPrimary" href="contact.html">Get a free quote</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp now</a>
-</div>
-</div>
-</section>
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Popular Materials</h2>
+      <p class="lead reveal">We work with a wide range of premium natural and engineered stones.</p>
 
-<hr class="sep">
-
-<section class="section">
-<div class="container">
-<h2 class="reveal">Recent marble worktop projects</h2>
-<div class="gallery">
-<div class="gItem reveal"><img src="images/project-01.jpg" data-full="images/project-01.jpg" alt="Marble kitchen worktop installation in London" loading="lazy" tabindex="0"><div class="cap">Marble worktop, West London</div></div>
-<div class="gItem reveal"><img src="images/project-06.jpg" data-full="images/project-06.jpg" alt="Marble vanity or worktop installation in London" loading="lazy" tabindex="0"><div class="cap">Marble vanity / worktop</div></div>
-<div class="gItem reveal"><img src="images/project-05.jpg" data-full="images/project-05.jpg" alt="Backlit onyx feature wall in London" loading="lazy" tabindex="0"><div class="cap">Backlit onyx feature</div></div>
-</div>
-<div class="btnRow reveal" style="margin-top:18px;">
-<a class="btn" href="work.html">View all projects</a>
-</div>
-</div>
-</section>
-
-<hr class="sep">
-
-<section class="section">
-<div class="container">
-<h2 class="reveal">FAQs</h2>
-<div class="cardGrid cols2">
-<div class="card reveal">
-<h3>How long does installation take?</h3>
-<p>A standard kitchen worktop is usually fitted in a day once templating is complete. Larger or more complex layouts may take longer.</p>
-</div>
-<div class="card reveal">
-<h3>Does marble need sealing?</h3>
-<p>Yes — we seal every marble worktop on installation, and recommend re-sealing periodically to protect against staining.</p>
-</div>
-<div class="card reveal">
-<h3>Can you match an existing slab?</h3>
-<p>Where possible, yes. Send photos of your current worktop or inspiration images and we'll advise on the closest match.</p>
-</div>
-<div class="card reveal">
-<h3>Do you remove the old worktop?</h3>
-<p>We can arrange removal and disposal of your existing worktop as part of the job — just let us know when you enquire.</p>
-</div>
-</div>
-</div>
-</section>
+      <div class="materialGrid">
+        <div class="materialCard reveal">
+          <div class="mImg">&#127775;</div>
+          <div class="mInfo">
+            <h4>Carrara Marble</h4>
+            <p>Classic white with grey veining. Timeless elegance.</p>
+          </div>
+        </div>
+        <div class="materialCard reveal">
+          <div class="mImg">&#127775;</div>
+          <div class="mInfo">
+            <h4>Calacatta Marble</h4>
+            <p>Bold veining on white. Premium statement stone.</p>
+          </div>
+        </div>
+        <div class="materialCard reveal">
+          <div class="mImg">&#127775;</div>
+          <div class="mInfo">
+            <h4>Statuario Marble</h4>
+            <p>Dramatic grey veins. High-end luxury choice.</p>
+          </div>
+        </div>
+        <div class="materialCard reveal">
+          <div class="mImg">&#127775;</div>
+          <div class="mInfo">
+            <h4>Engineered Quartz</h4>
+            <p>Durable, consistent, low maintenance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-<div class="container">
-<div class="footTop">
-<h2 class="reveal">Ready to talk about your marble worktop?</h2>
-<p class="lead reveal center">Call or WhatsApp with your postcode + photos — we’ll reply quickly.</p>
-<div class="btnRow reveal" style="justify-content:center;">
-<a class="btn btnPrimary" href="tel:+447979515900">Call 07979 515900</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp</a>
-<a class="btn" href="contact.html">Free quote</a>
-</div>
-</div>
-<div class="footGrid">
-<div class="footCol">
-<h4>Prime Marble Specialists</h4>
-<p class="small">Premium marble, stone and tiling installation across London & Greater London. Precision fitting, clean finishes, honest pricing.</p>
-</div>
-<div class="footCol">
-<h4>Services</h4>
-<a href="index.html#kitchens">Kitchens</a>
-<a href="index.html#bathrooms">Bathrooms</a>
-<a href="marble-worktops-london.html">Marble Worktops</a>
-<a href="porcelain-tiling-london.html">Porcelain Tiling</a>
-</div>
-<div class="footCol">
-<h4>Company</h4>
-<a href="work.html">Our Work</a>
-<a href="blog.html">Blog</a>
-<a href="contact.html">Contact</a>
-</div>
-<div class="footCol">
-<h4>Get in touch</h4>
-<a href="tel:+447979515900">07979 515900</a>
-<a href="https://wa.me/447979515900">WhatsApp</a>
-</div>
-</div>
-<div class="footBottom">
-<span>© 2026 Prime Marble Specialists • London</span>
-<span>Marble • Natural Stone • Porcelain • Ceramic</span>
-</div>
-</div>
+  <div class="container">
+    <p class="small">&copy; 2026 Prime Marble Specialists &bull; London</p>
+  </div>
 </footer>
 
-<div id="lightbox" role="dialog" aria-hidden="true"><img alt="Expanded project photo"></div>
-<script src="assets/site.js"></script>
+<script>
+(function(){
+  const els=document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver((entries)=>{entries.forEach((en)=>{if(en.isIntersecting)en.target.classList.add("show");});},{threshold:0.12});
+    els.forEach((el)=>io.observe(el));
+  }else{
+    els.forEach((el)=>el.classList.add("show"));
+  }
+})();
+</script>
+
 </body>
 </html>

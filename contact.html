@@ -1,219 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Request a Free Quote | Prime Marble Specialists London</title>
-<meta name="description" content="Get a free marble, stone or tiling installation quote in London. Call 07979 515900, WhatsApp photos, or fill in the form and we'll reply quickly.">
-<link rel="canonical" href="https://prime-marble-site.vercel.app/contact.html">
-<meta property="og:title" content="Request a Free Quote | Prime Marble Specialists London">
-<meta property="og:description" content="Marble, stone & tiling quotes across London & Greater London. Call 07979 515900.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/project-05.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="images/favicon.png" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Quote | Prime Marble Specialists London</title>
+<meta name="description" content="Get a free marble installation quote in London. Call 07979 515900 or WhatsApp photos for a fast estimate.">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-<style>:root{ --pageHeroImg: url("images/project-03.jpg"); }</style>
+<style>
+:root{--orange:#ff6a00;--orange2:#ff9a3d;--dark:#0c0c0c;--muted:#555;--border:rgba(0,0,0,.08);--shadow:0 25px 60px rgba(0,0,0,.10);--shadowSoft:0 12px 30px rgba(0,0,0,.08);--radius:18px;--max:1200px;--sans:'Inter',sans-serif}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--dark);background:linear-gradient(rgba(255,255,255,.93),rgba(255,255,255,.93)),url("images/marble-bg.jpg") center/cover fixed no-repeat}
+a{color:inherit}
+.container{width:90%;max-width:var(--max);margin:auto}
+h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-0.5px}
+h1{font-size:52px;line-height:1.05;margin:14px 0 18px}
+.lead{margin:0;font-size:18px;color:var(--muted);max-width:68ch;line-height:1.65}
+.small{font-size:14px;color:var(--muted);line-height:1.6}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:14px}
+.logo img{width:240px;height:auto;display:block;filter:drop-shadow(0 10px 20px rgba(0,0,0,.06))}
+nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;font-weight:650;color:var(--muted);padding:9px 12px;border-radius:12px;transition:.2s}
+nav a:hover{color:var(--dark);background:rgba(0,0,0,.05)}
+.section{padding:80px 0}
+.btnRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;text-decoration:none;font-weight:750;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.92);box-shadow:var(--shadowSoft);transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-3px)}
+.btnPrimary{border-color:transparent;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#1a120b}
+.btnPrimary:hover{box-shadow:0 20px 50px rgba(255,106,0,.35)}
+.btnDark{border-color:transparent;background:#111;color:#fff}
+.btnDark:hover{box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.card{border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadowSoft);background:rgba(255,255,255,.92);backdrop-filter:blur(6px);padding:24px}
+label{display:block;font-weight:800;margin:10px 0 6px;font-family:var(--sans);letter-spacing:0}
+input,textarea,select{width:100%;padding:14px;border-radius:14px;border:1px solid rgba(0,0,0,.12);font-size:15px;background:rgba(255,255,255,.95);outline:none}
+input:focus,textarea:focus,select:focus{border-color:rgba(255,106,0,.55);box-shadow:0 0 0 4px rgba(255,106,0,.12)}
+textarea{min-height:140px;resize:vertical}
+
+/* Contact info cards */
+.infoGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:26px}
+.infoCard{border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadowSoft);background:rgba(255,255,255,.92);padding:24px;text-align:center;transition:transform .3s ease}
+.infoCard:hover{transform:translateY(-4px)}
+.infoCard .icon{font-size:32px;margin-bottom:10px}
+.infoCard h3{margin:0 0 8px;font-family:'Playfair Display',serif}
+.infoCard p{margin:0;color:var(--muted);font-size:14px}
+.infoCard a{color:var(--orange);font-weight:700;text-decoration:none}
+
+footer{padding:60px 0;border-top:1px solid var(--border);text-align:center;background:rgba(255,255,255,.85);backdrop-filter:blur(10px)}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:980px){h1{font-size:40px}.logo img{width:180px}.infoGrid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+
 <header>
-<div class="container nav">
-<a class="logo" href="index.html"><img src="images/logo.png" alt="Prime Marble Specialists"></a>
-<button class="navToggle" aria-expanded="false" aria-controls="siteMenu">Menu ☰</button>
-<nav class="menuWrap" id="siteMenu">
-<a href="index.html">Home</a>
-<div class="drop">
-<a href="index.html#services">Services</a>
-<div class="panel" aria-label="Services menu">
-<div class="panelGrid">
-<a class="pItem" href="index.html#kitchens"><strong>Kitchens</strong><span>Worktops, islands, splashbacks</span></a>
-<a class="pItem" href="index.html#bathrooms"><strong>Bathrooms</strong><span>Vanities, walls, showers</span></a>
-<a class="pItem" href="index.html#features"><strong>Feature Walls</strong><span>Bookmatching, statement stone</span></a>
-<a class="pItem" href="index.html#flooring"><strong>Flooring & Stairs</strong><span>Stone floors, steps, thresholds</span></a>
-</div>
-</div>
-</div>
-<a href="work.html">Our Work</a>
-<a href="marble-worktops-london.html">Marble Worktops</a>
-<a href="porcelain-tiling-london.html">Porcelain Tiling</a>
-<a href="contact.html">Contact</a>
-<a href="blog.html">Blog</a>
-</nav>
-</div>
+  <div class="container nav">
+    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Prime Marble Specialists"></a></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="work.html">Our Work</a>
+      <a href="marble-worktops-london.html">Marble Worktops</a>
+      <a href="porcelain-tiling-london.html">Porcelain Tiling</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<div class="stickyCta">
-<a class="btn btnPrimary" href="tel:+447979515900">Call</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp</a>
-</div>
-
-<main id="main">
-<section class="pageHero">
-<div class="container">
-<p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
-<h1>Request a free quote</h1>
-<p class="lead">Send your details and photos — we'll come back to you quickly with an honest estimate.</p>
-</div>
-</section>
-
-<section class="section" id="quote" style="padding-top:60px;">
-<div class="container">
-<div class="quote">
-<div class="card reveal">
-<h3>Tell us about your project</h3>
-<!-- BASIN FORM -->
-<form action="https://usebasin.com/f/740588ce5ce8" method="POST">
-<label for="name">Full name</label>
-<input id="name" name="name" required placeholder="Your name">
-<label for="phone">Phone</label>
-<input id="phone" name="phone" required placeholder="079..">
-<label for="email">Email (optional)</label>
-<input id="email" name="email" type="email" placeholder="you@email.com">
-<label for="postcode">Postcode</label>
-<input id="postcode" name="postcode" required placeholder="e.g. SW1, E14, W3">
-<label for="project">Project type</label>
-<select id="project" name="project">
-<option>Kitchen worktops</option>
-<option>Bathroom</option>
-<option>Porcelain / ceramic tiling</option>
-<option>Flooring / stairs</option>
-<option>Feature wall / onyx</option>
-<option>Trade / commercial</option>
-<option>Other</option>
-</select>
-<label for="message">Message</label>
-<textarea id="message" name="message" placeholder="Rough sizes, timeline, material preference. You can WhatsApp photos too."></textarea>
-<input type="hidden" name="source" value="Prime Marble Specialists website">
-<input type="hidden" name="page" value="contact">
-<div class="btnRow" style="margin-top:12px;">
-<button type="submit" class="btn btnPrimary">Send request</button>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
-</div>
-<p class="small" style="margin-top:10px;">Submissions are delivered via Basin. We typically reply within a few hours.</p>
-</form>
-<!-- /BASIN FORM -->
-</div>
-
-<div>
-<div class="card reveal">
-<h3>Contact details</h3>
-<p class="small">
-<strong>Phone:</strong> <a href="tel:+447979515900">07979 515900</a><br>
-<strong>WhatsApp:</strong> <a href="https://wa.me/447979515900">Message us</a><br>
-<strong>Coverage:</strong> Central & Greater London
-</p>
-<div class="btnRow" style="margin-top:14px;">
-<a class="btn btnPrimary" href="tel:+447979515900">Call now</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp now</a>
-</div>
-</div>
-<div class="card reveal" style="margin-top:20px;">
-<h3>Fast-track your quote</h3>
-<p class="small">
-For the quickest estimate, WhatsApp:<br>
-• Photos of the space<br>
-• Postcode<br>
-• Rough sizes (if you know them)<br>
-• Any inspiration photos
-</p>
-</div>
-<div class="card reveal" style="margin-top:20px;">
-<h3>Who we work with</h3>
-<p class="small">Homeowners • Builders • Interior designers • Property developers</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<hr class="sep">
-
 <section class="section">
-<div class="container">
-<h2 class="reveal">Common questions</h2>
-<div class="cardGrid cols2">
-<div class="card reveal">
-<h3>How quickly can you quote?</h3>
-<p>Most WhatsApp enquiries with photos and a postcode get a same-day estimate. Site visits are arranged for larger or more complex jobs.</p>
-</div>
-<div class="card reveal">
-<h3>Do you supply the stone or tiles?</h3>
-<p>Yes — we can source materials through our fabrication partners, or work with material you've already purchased.</p>
-</div>
-<div class="card reveal">
-<h3>Which areas do you cover?</h3>
-<p>Central, North, South, East & West London, plus Greater London. See the map on our <a href="index.html#services">homepage</a> for the full list of areas.</p>
-</div>
-<div class="card reveal">
-<h3>Do you work with builders and designers?</h3>
-<p>Regularly. We're used to fitting into a wider build schedule and communicating clearly with the rest of the trades on site.</p>
-</div>
-</div>
-</div>
-</section>
+  <div class="container">
+    <h1 class="reveal">Request a Free Quote</h1>
+    <p class="lead reveal">Send us your details and we&apos;ll respond quickly. You can also WhatsApp photos.</p>
 
-<hr class="sep">
+    <div class="infoGrid reveal">
+      <div class="infoCard">
+        <div class="icon">&#128222;</div>
+        <h3>Call Us</h3>
+        <p><a href="tel:+447979515900">07979 515900</a></p>
+      </div>
+      <div class="infoCard">
+        <div class="icon">&#128172;</div>
+        <h3>WhatsApp</h3>
+        <p><a href="https://wa.me/447979515900">Send photos</a></p>
+      </div>
+      <div class="infoCard">
+        <div class="icon">&#128205;</div>
+        <h3>Location</h3>
+        <p>London &amp; Greater London</p>
+      </div>
+    </div>
 
-<section class="section">
-<div class="container">
-<h2 class="reveal">Find us in London</h2>
-<div class="mapWrap reveal">
-<iframe
-title="Map of London service area"
-src="https://www.google.com/maps?q=London&output=embed"
-width="100%"
-height="360"
-style="border:0;"
-loading="lazy"
-referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-</div>
+    <div class="btnRow reveal" style="margin-top:30px;">
+      <a class="btn btnPrimary" href="tel:+447979515900">Call 07979 515900</a>
+      <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp</a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px;">
+      <div class="card reveal">
+        <form action="https://usebasin.com/f/740588ce5ce8" method="POST">
+          <label>Full name</label>
+          <input name="name" required placeholder="Your name">
+
+          <label>Phone or Email</label>
+          <input name="contact" required placeholder="079.. or you@email.com">
+
+          <label>Postcode (London)</label>
+          <input name="postcode" required placeholder="e.g. SW1, E14, W3">
+
+          <label>Project Type</label>
+          <select name="project-type">
+            <option>Kitchen worktops</option>
+            <option>Bathroom</option>
+            <option>Porcelain / ceramic tiling</option>
+            <option>Flooring / stairs</option>
+            <option>Feature wall / onyx</option>
+            <option>Trade / commercial</option>
+            <option>Other</option>
+          </select>
+
+          <label>Message</label>
+          <textarea name="message" placeholder="Project details, size, timeline..."></textarea>
+
+          <input type="hidden" name="source" value="Prime Marble Specialists website">
+          <input type="hidden" name="page" value="contact">
+
+          <div class="btnRow" style="margin-top:12px;">
+            <button type="submit" class="btn btnPrimary" style="border:none;cursor:pointer;">Send Request</button>
+          </div>
+
+          <p class="small" style="margin-top:10px;">Submissions are delivered via Basin.</p>
+        </form>
+      </div>
+
+      <div class="card reveal">
+        <h3>Fast-track quotes</h3>
+        <p class="small">
+          For the quickest estimate, WhatsApp:<br><br>
+          &bull; Photos of the space<br>
+          &bull; Postcode<br>
+          &bull; Rough sizes (if you know them)<br>
+          &bull; Any inspiration photos
+        </p>
+
+        <div class="btnRow" style="margin-top:14px;">
+          <a class="btn btnPrimary" href="tel:+447979515900">Call 07979 515900</a>
+          <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp now</a>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>Who we work with</h3>
+          <p class="small">Homeowners &bull; Builders &bull; Interior designers</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-</main>
 
 <footer>
-<div class="container">
-<div class="footTop">
-<h2 class="reveal">Prefer to just call?</h2>
-<p class="lead reveal center">We're happy to talk through your project on the phone.</p>
-<div class="btnRow reveal" style="justify-content:center;">
-<a class="btn btnPrimary" href="tel:+447979515900">Call 07979 515900</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp</a>
-</div>
-</div>
-<div class="footGrid">
-<div class="footCol">
-<h4>Prime Marble Specialists</h4>
-<p class="small">Premium marble, stone and tiling installation across London & Greater London. Precision fitting, clean finishes, honest pricing.</p>
-</div>
-<div class="footCol">
-<h4>Services</h4>
-<a href="index.html#kitchens">Kitchens</a>
-<a href="index.html#bathrooms">Bathrooms</a>
-<a href="marble-worktops-london.html">Marble Worktops</a>
-<a href="porcelain-tiling-london.html">Porcelain Tiling</a>
-</div>
-<div class="footCol">
-<h4>Company</h4>
-<a href="work.html">Our Work</a>
-<a href="blog.html">Blog</a>
-<a href="contact.html">Contact</a>
-</div>
-<div class="footCol">
-<h4>Get in touch</h4>
-<a href="tel:+447979515900">07979 515900</a>
-<a href="https://wa.me/447979515900">WhatsApp</a>
-</div>
-</div>
-<div class="footBottom">
-<span>© 2026 Prime Marble Specialists • London</span>
-<span>Marble • Natural Stone • Porcelain • Ceramic</span>
-</div>
-</div>
+  <div class="container">
+    <p class="small">&copy; 2026 Prime Marble Specialists &bull; London</p>
+  </div>
 </footer>
 
-<script src="assets/site.js"></script>
+<script>
+(function(){
+  const els=document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver((entries)=>{entries.forEach((en)=>{if(en.isIntersecting)en.target.classList.add("show");});},{threshold:0.12});
+    els.forEach((el)=>io.observe(el));
+  }else{
+    els.forEach((el)=>el.classList.add("show"));
+  }
+})();
+</script>
+
 </body>
 </html>

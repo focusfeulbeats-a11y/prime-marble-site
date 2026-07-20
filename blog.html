@@ -1,242 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Guides: Marble Care, Kitchen Design & Bathroom Stone | Prime Marble Specialists</title>
-<meta name="description" content="Guides on marble care, designing a kitchen with stone, and choosing bathroom stone — from Prime Marble Specialists, London.">
-<link rel="canonical" href="https://prime-marble-site.vercel.app/blog.html">
-<meta property="og:title" content="Guides | Prime Marble Specialists">
-<meta property="og:description" content="Practical guides on marble care, kitchen design and bathroom stone.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/project-05.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="images/favicon.png" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guides & Tips | Prime Marble Specialists London</title>
+<meta name="description" content="Expert guides on marble care, stone selection, kitchen design and bathroom planning. Tips from London's marble specialists.">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-<style>:root{ --pageHeroImg: url("images/project-06.jpg"); }</style>
+<style>
+:root{--orange:#ff6a00;--orange2:#ff9a3d;--dark:#0c0c0c;--muted:#555;--border:rgba(0,0,0,.08);--shadow:0 25px 60px rgba(0,0,0,.10);--shadowSoft:0 12px 30px rgba(0,0,0,.08);--radius:18px;--max:1200px;--sans:'Inter',sans-serif}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--dark);background:linear-gradient(rgba(255,255,255,.93),rgba(255,255,255,.93)),url("images/marble-bg.jpg") center/cover fixed no-repeat}
+a{color:inherit}
+.container{width:90%;max-width:var(--max);margin:auto}
+h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-0.5px}
+h1{font-size:52px;line-height:1.05;margin:14px 0 18px}
+h2{font-size:34px;margin:0 0 16px}
+.lead{margin:0;font-size:18px;color:var(--muted);max-width:68ch;line-height:1.65}
+.small{font-size:14px;color:var(--muted);line-height:1.6}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:14px}
+.logo img{width:240px;height:auto;display:block;filter:drop-shadow(0 10px 20px rgba(0,0,0,.06))}
+nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;font-weight:650;color:var(--muted);padding:9px 12px;border-radius:12px;transition:.2s}
+nav a:hover{color:var(--dark);background:rgba(0,0,0,.05)}
+.section{padding:80px 0}
+.btnRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;text-decoration:none;font-weight:750;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.92);box-shadow:var(--shadowSoft);transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-3px)}
+.btnPrimary{border-color:transparent;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#1a120b}
+.btnPrimary:hover{box-shadow:0 20px 50px rgba(255,106,0,.35)}
+.btnDark{border-color:transparent;background:#111;color:#fff}
+.btnDark:hover{box-shadow:0 20px 50px rgba(0,0,0,.35)}
+
+/* Article cards */
+.articleGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:26px}
+.articleCard{border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadowSoft);background:rgba(255,255,255,.92);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.articleCard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.articleCard .aImg{height:200px;background:linear-gradient(135deg,#f5f5f5,#e8e8e8);display:flex;align-items:center;justify-content:center;font-size:60px}
+.articleCard .aContent{padding:24px}
+.articleCard .aContent .tag{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(255,106,0,.1);color:var(--orange);font-size:12px;font-weight:600;margin-bottom:10px}
+.articleCard .aContent h3{margin:0 0 10px;font-size:22px}
+.articleCard .aContent p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+.articleCard .aContent .readMore{display:inline-block;margin-top:14px;font-weight:700;color:var(--orange);text-decoration:none}
+
+/* Full article */
+.articleFull{border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadowSoft);background:rgba(255,255,255,.92);padding:40px;margin-top:30px}
+.articleFull h3{font-size:28px;margin-bottom:16px}
+.articleFull p{color:var(--muted);line-height:1.8;margin-bottom:16px}
+.articleFull ul{color:var(--muted);line-height:1.8;margin-bottom:16px}
+.articleFull li{margin-bottom:8px}
+
+footer{padding:60px 0;border-top:1px solid var(--border);text-align:center;background:rgba(255,255,255,.85);backdrop-filter:blur(10px)}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:980px){h1{font-size:40px}.articleGrid{grid-template-columns:1fr}.logo img{width:180px}}
+</style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+
 <header>
-<div class="container nav">
-<a class="logo" href="index.html"><img src="images/logo.png" alt="Prime Marble Specialists"></a>
-<button class="navToggle" aria-expanded="false" aria-controls="siteMenu">Menu ☰</button>
-<nav class="menuWrap" id="siteMenu">
-<a href="index.html">Home</a>
-<div class="drop">
-<a href="index.html#services">Services</a>
-<div class="panel" aria-label="Services menu">
-<div class="panelGrid">
-<a class="pItem" href="index.html#kitchens"><strong>Kitchens</strong><span>Worktops, islands, splashbacks</span></a>
-<a class="pItem" href="index.html#bathrooms"><strong>Bathrooms</strong><span>Vanities, walls, showers</span></a>
-<a class="pItem" href="index.html#features"><strong>Feature Walls</strong><span>Bookmatching, statement stone</span></a>
-<a class="pItem" href="index.html#flooring"><strong>Flooring & Stairs</strong><span>Stone floors, steps, thresholds</span></a>
-</div>
-</div>
-</div>
-<a href="work.html">Our Work</a>
-<a href="marble-worktops-london.html">Marble Worktops</a>
-<a href="porcelain-tiling-london.html">Porcelain Tiling</a>
-<a href="contact.html">Contact</a>
-<a href="blog.html" aria-current="page">Blog</a>
-</nav>
-</div>
+  <div class="container nav">
+    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Prime Marble Specialists"></a></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="work.html">Our Work</a>
+      <a href="marble-worktops-london.html">Marble Worktops</a>
+      <a href="porcelain-tiling-london.html">Porcelain Tiling</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<div class="stickyCta">
-<a class="btn btnPrimary" href="tel:+447979515900">Call</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp</a>
-</div>
+<main>
+  <section class="section">
+    <div class="container">
+      <h1 class="reveal">Guides &amp; Tips</h1>
+      <p class="lead reveal">Expert advice on marble care, stone selection, and design planning from London&apos;s specialists.</p>
 
-<main id="main">
-<section class="pageHero">
-<div class="container">
-<p class="breadcrumb"><a href="index.html">Home</a> / Blog</p>
-<h1>Guides on stone, tiling & design</h1>
-<p class="lead">Practical, no-nonsense advice from people who install this material every week.</p>
-</div>
-</section>
+      <div class="articleGrid">
+        <div class="articleCard reveal" id="care">
+          <div class="aImg">&#129516;</div>
+          <div class="aContent">
+            <span class="tag">Care</span>
+            <h3>How to Care for Marble</h3>
+            <p>Simple daily care routines and what to avoid to keep your marble surfaces looking new for years.</p>
+            <a href="#care-full" class="readMore">Read full guide &rarr;</a>
+          </div>
+        </div>
+        <div class="articleCard reveal" id="kitchen">
+          <div class="aImg">&#127860;</div>
+          <div class="aContent">
+            <span class="tag">Design</span>
+            <h3>Designing a Kitchen with Stone</h3>
+            <p>Choosing the right finishes, edge profiles, and layouts that create a premium, timeless look.</p>
+            <a href="#kitchen-full" class="readMore">Read full guide &rarr;</a>
+          </div>
+        </div>
+        <div class="articleCard reveal" id="bathroom">
+          <div class="aImg">&#128704;</div>
+          <div class="aContent">
+            <span class="tag">Bathroom</span>
+            <h3>Bathroom Stone: Best Options</h3>
+            <p>What stone works best in wet areas, plus sealing and maintenance tips for long-lasting beauty.</p>
+            <a href="#bathroom-full" class="readMore">Read full guide &rarr;</a>
+          </div>
+        </div>
+        <div class="articleCard reveal" id="tiling">
+          <div class="aImg">&#9638;</div>
+          <div class="aContent">
+            <span class="tag">Tiling</span>
+            <h3>Choosing the Right Tile Size</h3>
+            <p>How to select tile dimensions for different spaces to maximise visual impact and practicality.</p>
+            <a href="#tiling-full" class="readMore">Read full guide &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section" style="padding-top:56px;">
-<div class="container">
-<div class="blogGrid">
-<div class="blogCard reveal">
-<img src="images/project-01.jpg" alt="Marble worktop care">
-<div class="blogBody">
-<span class="cat">Care & maintenance</span>
-<h3>How to care for marble</h3>
-<p>Simple daily habits that keep marble looking new, and the mistakes that cause the most damage.</p>
-<a class="readMore" href="#care">Read guide →</a>
-</div>
-</div>
-<div class="blogCard reveal">
-<img src="images/project-06.jpg" alt="Kitchen designed with stone">
-<div class="blogBody">
-<span class="cat">Design</span>
-<h3>Designing a kitchen with stone</h3>
-<p>How to choose finishes, edge profiles and layouts that actually look premium — not just expensive.</p>
-<a class="readMore" href="#kitchen">Read guide →</a>
-</div>
-</div>
-<div class="blogCard reveal">
-<img src="images/project-03.jpg" alt="Bathroom stone">
-<div class="blogBody">
-<span class="cat">Bathrooms</span>
-<h3>Bathroom stone: best options</h3>
-<p>What actually works in a wet room, plus sealing and maintenance tips specific to bathrooms.</p>
-<a class="readMore" href="#bathroom">Read guide →</a>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <section class="section" style="padding-top:0">
+    <div class="container">
 
-<hr class="sep">
+      <div class="articleFull reveal" id="care-full">
+        <h3>How to Care for Marble</h3>
+        <p>Marble is a beautiful natural stone that adds elegance to any space, but it does require some care to maintain its appearance over time. With the right routine, your marble surfaces can look stunning for decades.</p>
+        <p><strong>Daily care:</strong></p>
+        <ul>
+          <li>Wipe surfaces with a soft, damp cloth after use</li>
+          <li>Use pH-neutral stone cleaner &mdash; never acidic or abrasive products</li>
+          <li>Blot spills immediately, especially acidic liquids like lemon juice or wine</li>
+          <li>Use coasters and trivets to protect from heat and staining</li>
+        </ul>
+        <p><strong>What to avoid:</strong></p>
+        <ul>
+          <li>Vinegar, lemon, or bleach-based cleaners</li>
+          <li>Abrasive scrubbing pads or powders</li>
+          <li>Leaving standing water on the surface</li>
+          <li>Placing hot pans directly on the stone</li>
+        </ul>
+        <p><strong>Annual maintenance:</strong> We recommend professional resealing once a year to maintain stain resistance and protect the stone&apos;s natural beauty.</p>
+      </div>
 
-<section class="section" id="care">
-<div class="container article">
-<span class="eyebrow reveal">Care & maintenance</span>
-<h1 class="reveal" style="font-size:38px;">How to care for marble</h1>
-<p class="lead reveal">Marble is one of the most beautiful worktop and wall materials you can install — and one of the more forgiving to live with, provided you understand a few basic rules.</p>
+      <div class="articleFull reveal" id="kitchen-full">
+        <h3>Designing a Kitchen with Stone</h3>
+        <p>Stone worktops are the centrepiece of any luxury kitchen. The right choice of material, edge profile, and layout can transform your space from ordinary to exceptional.</p>
+        <p><strong>Material selection:</strong></p>
+        <ul>
+          <li><strong>Carrara Marble:</strong> Classic, affordable, versatile grey veining</li>
+          <li><strong>Calacatta Marble:</strong> Bold, dramatic veins for statement kitchens</li>
+          <li><strong>Engineered Quartz:</strong> Consistent colour, highly durable, low maintenance</li>
+          <li><strong>Granite:</strong> Extremely hard-wearing, unique natural patterns</li>
+        </ul>
+        <p><strong>Edge profiles:</strong> A pencil edge offers a clean, modern look. An ogee edge adds traditional elegance. A waterfall edge creates a dramatic, continuous flow down the sides of an island.</p>
+        <p><strong>Layout tips:</strong> Plan your veining flow across seams for a cohesive look. Consider bookmatching for feature walls or splashbacks. Allow for adequate overhang on islands for seating.</p>
+      </div>
 
-<h2 class="reveal">Wipe up spills quickly</h2>
-<p class="reveal">Marble is a natural, porous stone, which means acidic liquids like wine, lemon juice, coffee and vinegar can etch the surface if left to sit. This isn't the same as staining — etching dulls the polish rather than discolouring it — but either way, the fix is the same: wipe spills as soon as you notice them, with a soft cloth and warm water.</p>
+      <div class="articleFull reveal" id="bathroom-full">
+        <h3>Bathroom Stone: Best Options</h3>
+        <p>Not all stones are created equal when it comes to wet environments. Choosing the right material and finish for your bathroom ensures both beauty and longevity.</p>
+        <p><strong>Best stone choices:</strong></p>
+        <ul>
+          <li><strong>Marble:</strong> Stunning but requires sealing. Best for vanity tops and wall cladding.</li>
+          <li><strong>Quartz:</strong> Non-porous, no sealing needed. Ideal for busy family bathrooms.</li>
+          <li><strong>Limestone:</strong> Warm, natural look. Requires regular sealing in wet areas.</li>
+          <li><strong>Porcelain:</strong> Extremely durable, water-resistant. Great for floors and walls.</li>
+        </ul>
+        <p><strong>Finishes:</strong> A honed (matte) finish is less slippery for floors and hides water spots better than polished. Polished finishes create a luxurious, reflective look on walls and vanity tops.</p>
+        <p><strong>Sealing:</strong> Natural stone in bathrooms should be sealed professionally before use and resealed annually to prevent water absorption and staining.</p>
+      </div>
 
-<h2 class="reveal">Use the right cleaning products</h2>
-<p class="reveal">Everyday kitchen sprays are often too acidic or abrasive for marble. Stick to a pH-neutral stone cleaner, or warm water with a small amount of mild washing-up liquid. Avoid anything labelled as a limescale remover, vinegar-based cleaner, or generic "multi-surface" spray — these will dull the polish over time.</p>
+      <div class="articleFull reveal" id="tiling-full">
+        <h3>Choosing the Right Tile Size</h3>
+        <p>Tile size has a significant impact on the visual feel of a room. Large format tiles create a seamless, spacious look, while smaller tiles add texture and detail.</p>
+        <p><strong>Large format (60x60cm+):</strong></p>
+        <ul>
+          <li>Creates fewer grout lines for a cleaner, more modern appearance</li>
+          <li>Makes small rooms feel larger</li>
+          <li>Requires perfectly flat walls and floors for best results</li>
+          <li>Ideal for open-plan kitchens and large bathrooms</li>
+        </ul>
+        <p><strong>Medium format (30x30cm to 60x60cm):</strong></p>
+        <ul>
+          <li>Versatile and forgiving on slightly uneven surfaces</li>
+          <li>Works well in most residential spaces</li>
+          <li>Good balance between visual impact and practicality</li>
+        </ul>
+        <p><strong>Small format / Mosaic:</strong></p>
+        <ul>
+          <li>Great for feature walls, niches, and shower floors</li>
+          <li>Adds texture and visual interest</li>
+          <li>More grout lines mean more maintenance</li>
+          <li>Excellent for creating patterns and borders</li>
+        </ul>
+      </div>
 
-<h2 class="reveal">Reseal periodically</h2>
-<p class="reveal">We seal every marble surface we install, but sealant wears down with use. A simple water test tells you when it's time to reseal: if water no longer beads on the surface and instead soaks in within a minute or two, it's due for a fresh coat.</p>
+      <div class="btnRow reveal" style="margin-top:30px;">
+        <a class="btn btnPrimary" href="contact.html">Get a free quote</a>
+        <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
+      </div>
 
-<h2 class="reveal">Protect against heat and scratches</h2>
-<ul class="reveal">
-<li>Always use a trivet or board under hot pans — marble can crack from sudden temperature changes.</li>
-<li>Use a chopping board for food prep rather than cutting directly on the surface.</li>
-<li>Lift heavy items rather than dragging them across the worktop.</li>
-</ul>
-
-<h2 class="reveal">When to call a professional</h2>
-<p class="reveal">Deep etching, chips, or cracks are best handled by a specialist rather than a DIY fix — an amateur repolish can leave visible dull patches that are harder to correct afterwards. If you're ever unsure, send us a photo on WhatsApp and we'll tell you honestly whether it's something to leave, something you can fix yourself, or something worth a site visit.</p>
-
-<div class="btnRow" style="margin-top:20px;">
-<a class="btn btnPrimary" href="contact.html">Ask us a question</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp a photo</a>
-</div>
-</div>
-</section>
-
-<hr class="sep">
-
-<section class="section" id="kitchen">
-<div class="container article">
-<span class="eyebrow reveal">Design</span>
-<h1 class="reveal" style="font-size:38px;">Designing a kitchen with stone</h1>
-<p class="lead reveal">A stone worktop is often the single biggest visual decision in a kitchen renovation. Here's how to make it count.</p>
-
-<h2 class="reveal">Start with veining direction, not just colour</h2>
-<p class="reveal">Two slabs of "the same" marble can look completely different depending on how the veining runs. Before ordering, ask to see the actual slab (or high-resolution photos of it) and think about how the veining will flow across joins, especially on an island where the eye naturally follows the longest run.</p>
-
-<h2 class="reveal">Choose an edge profile that matches the room</h2>
-<p class="reveal">A pencil or eased edge reads as clean and contemporary. A bullnose or bevelled edge feels softer and more traditional. The edge profile is a small detail that quietly sets the tone for the whole kitchen — it's worth spending five minutes with samples rather than defaulting to whatever's standard.</p>
-
-<h2 class="reveal">Plan seams before you fall in love with a layout</h2>
-<p class="reveal">Large islands or L-shaped runs often require a joint somewhere, simply because of slab size. A good installer will plan the seam location to be as unobtrusive as possible — often along a cabinet line rather than in the middle of open worktop — so raise this early rather than after templating.</p>
-
-<h2 class="reveal">Balance stone with the rest of the room</h2>
-<ul class="reveal">
-<li>A busy, high-veining marble usually pairs best with simple, flat-panel cabinetry.</li>
-<li>A quieter stone gives you more freedom to be bold with cabinet colour or hardware.</li>
-<li>Consider where the stone will be used — worktop only, or worktop plus splashback — since repeating it draws the eye and can either unify or overwhelm a small kitchen.</li>
-</ul>
-
-<h2 class="reveal">Think about the whole lifecycle</h2>
-<p class="reveal">A beautiful stone that never gets sealed, or is treated like granite when it needs marble-level care, won't stay beautiful. Factor maintenance into your material choice from the start, not as an afterthought once it's installed.</p>
-
-<div class="btnRow" style="margin-top:20px;">
-<a class="btn btnPrimary" href="contact.html">Plan your kitchen</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
-</div>
-</div>
-</section>
-
-<hr class="sep">
-
-<section class="section" id="bathroom">
-<div class="container article">
-<span class="eyebrow reveal">Bathrooms</span>
-<h1 class="reveal" style="font-size:38px;">Bathroom stone: best options</h1>
-<p class="lead reveal">Bathrooms are the hardest environment for natural stone — constant moisture, temperature swings and daily contact with skincare products. Here's what actually holds up.</p>
-
-<h2 class="reveal">Porcelain for wet zones, marble for statement surfaces</h2>
-<p class="reveal">For shower floors and enclosures, we usually recommend large-format porcelain over natural marble — it's non-porous, doesn't need resealing, and handles constant water exposure without any risk of staining. Save marble for vanity tops, feature walls and dry-zone flooring, where its natural beauty can shine without the daily water exposure.</p>
-
-<h2 class="reveal">Get the sealing right, and keep up with it</h2>
-<p class="reveal">Any marble in a bathroom needs a quality sealant, applied properly at installation and checked every 6–12 months. Bathrooms see far more moisture than kitchens, so resealing schedules should be more frequent than you'd use elsewhere in the home.</p>
-
-<h2 class="reveal">Watch out for common bathroom products</h2>
-<ul class="reveal">
-<li>Perfume, aftershave and some skincare products are acidic enough to etch marble — keep them off stone surfaces where possible, or wipe up drips promptly.</li>
-<li>Standard bathroom cleaning sprays are often too harsh; use a pH-neutral stone cleaner instead.</li>
-<li>Hard water marks are best removed with a stone-safe cleaner, never a limescale remover.</li>
-</ul>
-
-<h2 class="reveal">Ventilation matters more than people think</h2>
-<p class="reveal">Good extraction reduces the amount of standing moisture on stone surfaces, which in turn reduces how often you need to reseal and clean. If your bathroom doesn't have strong ventilation, it's worth addressing before — or alongside — a stone installation.</p>
-
-<h2 class="reveal">Our recommendation</h2>
-<p class="reveal">For most London bathrooms we suggest porcelain tiling for the shower and floor, paired with a marble vanity top or feature wall as the visual centrepiece. It gives you the low-maintenance practicality of porcelain where it matters most, and the natural beauty of marble where it's safest to use it.</p>
-
-<div class="btnRow" style="margin-top:20px;">
-<a class="btn btnPrimary" href="contact.html">Get bathroom advice</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
-</div>
-</div>
-</section>
+    </div>
+  </section>
 </main>
 
 <footer>
-<div class="container">
-<div class="footTop">
-<h2 class="reveal">Have a question about your project?</h2>
-<p class="lead reveal center">Call or WhatsApp with your postcode + photos — we’ll reply quickly.</p>
-<div class="btnRow reveal" style="justify-content:center;">
-<a class="btn btnPrimary" href="tel:+447979515900">Call 07979 515900</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp</a>
-<a class="btn" href="contact.html">Free quote</a>
-</div>
-</div>
-<div class="footGrid">
-<div class="footCol">
-<h4>Prime Marble Specialists</h4>
-<p class="small">Premium marble, stone and tiling installation across London & Greater London. Precision fitting, clean finishes, honest pricing.</p>
-</div>
-<div class="footCol">
-<h4>Services</h4>
-<a href="index.html#kitchens">Kitchens</a>
-<a href="index.html#bathrooms">Bathrooms</a>
-<a href="marble-worktops-london.html">Marble Worktops</a>
-<a href="porcelain-tiling-london.html">Porcelain Tiling</a>
-</div>
-<div class="footCol">
-<h4>Company</h4>
-<a href="work.html">Our Work</a>
-<a href="blog.html">Blog</a>
-<a href="contact.html">Contact</a>
-</div>
-<div class="footCol">
-<h4>Get in touch</h4>
-<a href="tel:+447979515900">07979 515900</a>
-<a href="https://wa.me/447979515900">WhatsApp</a>
-</div>
-</div>
-<div class="footBottom">
-<span>© 2026 Prime Marble Specialists • London</span>
-<span>Marble • Natural Stone • Porcelain • Ceramic</span>
-</div>
-</div>
+  <div class="container">
+    <p class="small">&copy; 2026 Prime Marble Specialists &bull; London</p>
+  </div>
 </footer>
 
-<script src="assets/site.js"></script>
+<script>
+(function(){
+  const els=document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver((entries)=>{entries.forEach((en)=>{if(en.isIntersecting)en.target.classList.add("show");});},{threshold:0.12});
+    els.forEach((el)=>io.observe(el));
+  }else{
+    els.forEach((el)=>el.classList.add("show"));
+  }
+})();
+</script>
+
 </body>
 </html>
