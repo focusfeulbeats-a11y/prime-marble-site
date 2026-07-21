@@ -195,9 +195,15 @@ hr.sep{ border:0; height:1px; background: rgba(0,0,0,.08); margin:0; }
   border:1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadowSoft);
   background: rgba(255,255,255,.92); backdrop-filter: blur(6px); padding:24px;
   transition: transform .3s ease, box-shadow .3s ease;
+  display:block; text-decoration:none; color:inherit;
 }
 .card:hover{transform: translateY(-6px); box-shadow: var(--shadow)}
 .card h3{font-family:var(--serif)}
+a.card h3::after{
+  content:"→"; display:inline-block; margin-left:8px; opacity:0; transform:translateX(-4px);
+  transition: opacity .25s ease, transform .25s ease; color:var(--orange);
+}
+a.card:hover h3::after{ opacity:1; transform:translateX(0); }
 .card p{margin:0; color:var(--muted); font-size:16px; line-height:1.6; font-family:var(--sans); letter-spacing:0}
 
 /* Gallery */
@@ -797,18 +803,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   /* WORK PAGE FILTERS */
   const filterBtns = document.querySelectorAll(".filterBtn");
   const galleryItems = document.querySelectorAll(".gallery .gItem");
+  function applyFilter(cat) {
+    filterBtns.forEach((b) => b.classList.toggle("active", b.getAttribute("data-filter") === cat));
+    galleryItems.forEach((item) => {
+      const match = cat === "all" || item.getAttribute("data-cat") === cat;
+      item.style.display = match ? "" : "none";
+    });
+  }
   if (filterBtns.length && galleryItems.length) {
     filterBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        filterBtns.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        const cat = btn.getAttribute("data-filter");
-        galleryItems.forEach((item) => {
-          const match = cat === "all" || item.getAttribute("data-cat") === cat;
-          item.style.display = match ? "" : "none";
-        });
-      });
+      btn.addEventListener("click", () => applyFilter(btn.getAttribute("data-filter")));
     });
+    const validCats = Array.from(filterBtns).map((b) => b.getAttribute("data-filter"));
+    const initialCat = new URLSearchParams(window.location.search).get("cat");
+    if (initialCat && validCats.includes(initialCat)) {
+      applyFilter(initialCat);
+    }
   }
 
   /* BEFORE / AFTER SLIDER */
