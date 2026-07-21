@@ -447,6 +447,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .hero .heroGrid{ display:block; padding:118px 0 36px; }
   .hero .badge{ background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.25); color:#fff; backdrop-filter: blur(6px); }
   .hero h1{ color:#fff; }
+  .hero h1.shimmerText{
+    background: linear-gradient(100deg, #fff 30%, var(--orange2) 45%, var(--orange) 50%, #fff 65%);
+    background-size: 250% auto;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
   .hero .lead{ color: rgba(255,255,255,.88); }
   .hero .heroCard{ display:none; }
   .hero .kpi{ background: rgba(255,255,255,.95); }
@@ -550,7 +556,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <div class="container heroGrid">
 <div class="reveal">
 <div class="badge">London • Marble • Natural Stone • Porcelain • Ceramic</div>
-<h1>Premium marble, stone and <span class="shimmerText">tiling</span> — finished to an exceptional standard.</h1>
+<h1 class="shimmerText">Premium marble, stone and tiling — finished to an exceptional standard.</h1>
 <p class="lead">
 Prime Marble Specialists deliver luxury marble worktops, bathrooms, flooring and feature walls —
 plus professional porcelain and ceramic tiling for kitchens, bathrooms and renovations.
