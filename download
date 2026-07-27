@@ -1,0 +1,30 @@
+# Stray snapshot / build zips — never ship these to the live site
+*.zip
+prime-marble-site*.zip
+
+# macOS
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Vercel local
+.vercel/
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*

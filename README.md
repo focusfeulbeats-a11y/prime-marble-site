@@ -1,74 +1,31 @@
-# 🏛️ Prime Marble Specialists
+# Prime Marble Specialists
 
-<p align="center">
-  <strong>Luxury Stone • Precision Craftsmanship • Timeless Design</strong>
-</p>
+**Luxury Stone • Precision Craftsmanship • Timeless Design**
+Premium marble, quartz, granite & porcelain installation specialists based in London.
 
-<p align="center">
-  Premium Marble, Quartz, Granite & Porcelain Installation Specialists based in London.
-</p>
+## About
 
----
+Prime Marble Specialists is a London-based company specialising in the fabrication and installation of high-end natural stone and engineered surfaces — marble, quartz, granite, limestone and large-format porcelain.
 
-## 📖 About
+## Pages
 
-**Prime Marble Specialists** is a London-based company specialising in the fabrication and installation of high-end natural stone and engineered surfaces.
+| File | URL | Purpose |
+| --- | --- | --- |
+| `index.html` | `/` | Homepage, services overview, quote form |
+| `work.html` | `/work` | Portfolio / project gallery |
+| `marble-worktops-london.html` | `/marble-worktops-london` | Marble worktops service page |
+| `porcelain-tiling-london.html` | `/porcelain-tiling-london` | Porcelain & ceramic tiling service page |
+| `contact.html` | `/contact` | Contact details + quote form |
+| `blog.html` | `/blog` | Guides index |
+| `404.html` | (any 404) | Not-found page |
+| `robots.txt` | `/robots.txt` | Crawler directives |
+| `sitemap.xml` | `/sitemap.xml` | Sitemap |
+| `vercel.json` | — | Vercel deploy config (clean URLs, headers, caching) |
 
-From luxury kitchens to bespoke bathrooms and commercial developments, we combine traditional craftsmanship with modern technology to deliver exceptional finishes that last a lifetime.
+## Project structure
 
----
-
-## ✨ Our Services
-
-* 🏛 Marble Worktops
-* ⚪ Quartz Worktops
-* 🪨 Granite Worktops
-* 🏠 Porcelain Worktops
-* 🚿 Luxury Bathrooms
-* 🍽 Kitchen Installations
-* 🧱 Wall Cladding
-* 🪜 Staircases
-* 🏢 Commercial Stone Projects
-* 🔨 Stone Repairs & Restoration
-
----
-
-## 🚀 Website Features
-
-* Responsive Design
-* Mobile Optimised
-* Luxury User Interface
-* Image Gallery with Lightbox
-* Before/After Slider
-* Project Filter
-* Client Testimonials
-* Contact Form (Basin)
-* SEO Friendly
-* Fast Loading
-* Scroll Animations
-* Modern HTML5 & CSS3
-* Schema.org Structured Data
-
----
-
-## 🛠 Built With
-
-| Technology | Purpose              |
-| ---------- | -------------------- |
-| HTML5      | Website Structure    |
-| CSS3       | Styling & Layout     |
-| JavaScript | Interactive Features |
-| Basin      | Form Handling        |
-| Vercel     | Deployment           |
-| GitHub     | Version Control      |
-
----
-
-## 📂 Project Structure
-
-```text
+```
 prime-marble-site/
-│
 ├── index.html
 ├── work.html
 ├── contact.html
@@ -76,88 +33,53 @@ prime-marble-site/
 ├── porcelain-tiling-london.html
 ├── blog.html
 ├── 404.html
-│
+├── style.css
+├── site.js
 ├── robots.txt
 ├── sitemap.xml
-│
+├── vercel.json
+├── .gitignore
 └── images/
     ├── logo.png
     ├── favicon.png
     ├── marble-bg.jpg
     ├── before.jpg
     ├── after.jpg
-    ├── project-01.jpg
-    ├── project-02.jpg
-    ├── project-03.jpg
-    ├── project-04.jpg
-    ├── project-05.jpg
-    └── project-06.jpg
+    └── project-01.jpg … project-06.jpg
 ```
 
----
+## Running locally
 
-## 🚀 Running the Project
-
-Clone the repository
-
-```bash
+```shell
 git clone https://github.com/focusfeulbeats-a11y/prime-marble-site.git
-```
-
-Go into the project
-
-```bash
 cd prime-marble-site
+open index.html
 ```
 
-Open
+Or run any static server:
 
-```text
-index.html
+```shell
+npx serve .
 ```
 
-or deploy directly with **Vercel**.
+## Deploying
 
----
+The site is a static build — no compile step. Deploy via Vercel (recommended):
 
-## 🌍 Live Website
-
-**Website**
-
-```
-https://prime-marble-site-74qm-pcd1dsl9c-edgar-vieiras-projects.vercel.app/
+```shell
+npx vercel --prod
 ```
 
----
+See **`LAUNCH.md`** for the full production launch checklist, including how to attach the canonical domain and verify the contact form.
 
-## 📞 Contact
+## Live site
+
+**https://primemarbletiling.co.uk/**
+
+## Contact
 
 **Prime Marble Specialists**
-
-📍 London, United Kingdom
-
-📧 Email: info@primemarblespecialists.co.uk
-
-📱 Phone: +44 7979 515900
-
-🌐 Website: https://prime-marble-site-74qm-pcd1dsl9c-edgar-vieiras-projects.vercel.app/
-
----
-
-## ⭐ Future Improvements
-
-* Online quotation calculator
-* Interactive 3D kitchen visualiser
-* Client portal for project tracking
-* Video testimonials
-* Stone catalogue with pricing
-* Blog with CMS integration
-* Multi-language support
-
----
-
-## 📄 License
-
-Copyright © 2026 Prime Marble Specialists.
-
-All Rights Reserved.
+London, United Kingdom
+Email: info@primemarbletiling.co.uk
+Phone: +44 7979 515900
+WhatsApp: https://wa.me/447979515900
