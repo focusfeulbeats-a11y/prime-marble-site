@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Stone Designer | Prime Marble Specialists</title>
+<meta name="description" content="Plan your natural stone project with the AI Stone Designer. Upload your space, add measurements, explore materials and prepare a concept for professional review.">
+<link rel="canonical" href="https://primemarbletiling.co.uk/ai-designer.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ai-designer.css">
+<script type="module" src="ai-designer.js"></script>
+</head>
+<body class="designerPage">
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html"><img src="images/logo-transparent.png" alt="Prime Marble Specialists"></a>
+    <button class="navToggle" aria-expanded="false" aria-controls="siteMenu">Menu ☰</button>
+    <button class="navClose" aria-label="Close menu">✕</button>
+    <nav class="menuWrap" id="siteMenu">
+      <a href="index.html">Home</a>
+      <div class="drop">
+        <a href="index.html#services">Services</a>
+        <div class="panel" aria-label="Services menu"><div class="panelGrid">
+          <a class="pItem" href="index.html#kitchens"><strong>Kitchens</strong><span>Worktops, islands, splashbacks</span></a>
+          <a class="pItem" href="index.html#bathrooms"><strong>Bathrooms</strong><span>Vanities, walls, showers</span></a>
+          <a class="pItem" href="index.html#features"><strong>Feature Walls</strong><span>Bookmatching, statement stone</span></a>
+          <a class="pItem" href="index.html#flooring"><strong>Flooring &amp; Stairs</strong><span>Stone floors, steps, thresholds</span></a>
+        </div></div>
+      </div>
+      <a class="active" href="ai-designer.html" aria-current="page">AI Stone Designer</a>
+      <a href="work.html">Our Work</a>
+      <a href="marble-worktops-london.html">Marble Worktops</a>
+      <a href="porcelain-tiling-london.html">Porcelain Tiling</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="designerHero">
+    <div class="designerHeroTexture" aria-hidden="true"></div>
+    <div class="container designerHeroGrid">
+      <div class="designerHeroCopy">
+        <span class="designerKicker">A new way to shape stone</span>
+        <h1>Design a space<br><em>worth living in.</em></h1>
+        <p>Bring your room, your measurements and your instinct for material together. Build a considered stone concept before it reaches the workshop.</p>
+        <div class="btnRow">
+          <button class="btn btnPrimary" type="button" data-start-designing>Start Designing <span aria-hidden="true">↗</span></button>
+          <a class="btn designerGhostButton" href="#how-it-works">See How It Works</a>
+        </div>
+        <p class="designerDisclaimer"><span aria-hidden="true">●</span> Phase 1 preview: photo reconstruction and 3D rendering are coming soon.</p>
+      </div>
+      <div class="designerHeroVisual" aria-label="Preview of the future stone design workspace">
+        <div class="heroCompass" aria-hidden="true">NSN<br><span>01</span></div>
+        <div class="roomSketch" aria-hidden="true">
+          <div class="sketchWall"></div><div class="sketchFloor"></div><div class="sketchIsland"></div><div class="sketchStone slab-one"></div><div class="sketchStone slab-two"></div>
+          <span class="sketchLabel label-stone">STONE / 01</span><span class="sketchLabel label-space">YOUR SPACE</span>
+        </div>
+        <div class="heroVisualCaption"><span>Concept workspace</span><strong>Calacatta / Kitchen study</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section designerIntro" id="how-it-works">
+    <div class="container">
+      <div class="designerSectionHeading">
+        <span class="eyebrow">From photograph to possibility</span>
+        <h2>A clearer way to make<br>material decisions.</h2>
+        <p class="lead">The designer gathers the practical details a fabricator needs, then creates a structured brief that can grow into a visual scene.</p>
+      </div>
+      <div class="designerProcessGrid">
+        <article><span class="processNumber">01</span><h3>Capture your space</h3><p>Photographs and dimensions create a useful starting point for the room.</p></article>
+        <article><span class="processNumber">02</span><h3>Shape the brief</h3><p>Describe the atmosphere, stone, finish and details you want to explore.</p></article>
+        <article><span class="processNumber">03</span><h3>Prepare for craft</h3><p>Save a structured concept ready for a professional conversation and quote.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="designerApp section" id="designer-app">
+    <div class="container">
+      <div class="designerAppHeader">
+        <div><span class="eyebrow">AI Stone Designer</span><h2>Start a new project</h2></div>
+        <span class="designerSaveState" id="saveState">Local draft</span>
+      </div>
+      <div class="designerLayout">
+        <aside class="wizardRail" aria-label="Project steps">
+          <div class="wizardRailTop"><span class="wizardOverline">Project builder</span><strong id="stepCounter">01 / 06</strong></div>
+          <ol class="stepList" id="stepList">
+            <li class="active"><button type="button" data-step-button="1"><span>01</span>Project type</button></li>
+            <li><button type="button" data-step-button="2"><span>02</span>Your space</button></li>
+            <li><button type="button" data-step-button="3"><span>03</span>Measurements</button></li>
+            <li><button type="button" data-step-button="4"><span>04</span>Design brief</button></li>
+            <li><button type="button" data-step-button="5"><span>05</span>Material</button></li>
+            <li><button type="button" data-step-button="6"><span>06</span>Review</button></li>
+          </ol>
+          <div class="wizardRailNote"><span aria-hidden="true">✦</span><p>Good design starts with useful detail. You can save and return to this draft on this device.</p></div>
+        </aside>
+
+        <form class="wizardPanel" id="designerWizard">
+          <section class="wizardStep active" data-step="1">
+            <div class="stepIntro"><span class="stepLabel">Step 01</span><h3>What are you making?</h3><p>Choose the project that best describes your space. This shapes the first concept brief.</p></div>
+            <div class="projectTypeGrid" id="projectTypes"></div>
+            <div class="wizardActions"><span></span><button class="btn btnDark" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="wizardStep" data-step="2" hidden>
+            <div class="stepIntro"><span class="stepLabel">Step 02</span><h3>Show us the room.</h3><p>Upload a few views from your phone or computer. Straight-on, well-lit photographs make future reconstruction more useful.</p></div>
+            <label class="uploadDrop" for="spacePhotos"><span class="uploadIcon" aria-hidden="true">＋</span><strong>Add photographs</strong><span>Room overview, walls, floor, windows, doors or worktop area</span><small>JPG, PNG or WEBP · up to 10 images · kept on this device for now</small></label>
+            <input id="spacePhotos" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden>
+            <div class="photoGrid" id="photoPreview" aria-live="polite"></div>
+            <p class="formHint" id="photoHint">No photographs selected yet. You can continue without them while exploring the prototype.</p>
+            <div class="wizardActions"><button class="btn" type="button" data-back>Back</button><button class="btn btnDark" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="wizardStep" data-step="3" hidden>
+            <div class="stepIntro"><span class="stepLabel">Step 03</span><h3>Give the room some scale.</h3><p>Approximate dimensions are enough for this first concept. We use millimetres as the construction default.</p></div>
+            <div class="unitSwitcher" role="group" aria-label="Measurement unit"><span>Enter in</span><button type="button" class="active" data-unit="mm">mm</button><button type="button" data-unit="cm">cm</button><button type="button" data-unit="m">m</button></div>
+            <div class="measurementGrid">
+              <label>Room width <span>required</span><input name="roomWidth" type="number" min="1" step="any" placeholder="3600" required><small class="unitLabel">mm</small></label>
+              <label>Room length <span>required</span><input name="roomLength" type="number" min="1" step="any" placeholder="4200" required><small class="unitLabel">mm</small></label>
+              <label>Ceiling height <span>required</span><input name="roomHeight" type="number" min="1" step="any" placeholder="2400" required><small class="unitLabel">mm</small></label>
+            </div>
+            <details class="optionalDetails"><summary>Optional features</summary><div class="optionalGrid"><label>Door opening <input name="door" type="text" placeholder="900 x 2100"></label><label>Window <input name="window" type="text" placeholder="1800 x 1200"></label><label>Worktop run <input name="worktop" type="text" placeholder="3200"></label><label>Island <input name="island" type="text" placeholder="2400 x 1000"></label><label>Other wall <input name="otherWall" type="text" placeholder="Add a note"></label></div></details>
+            <div class="wizardActions"><button class="btn" type="button" data-back>Back</button><button class="btn btnDark" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="wizardStep" data-step="4" hidden>
+            <div class="stepIntro"><span class="stepLabel">Step 04</span><h3>Describe the feeling.</h3><p>Use normal language. The future design planner will turn this brief into structured scene instructions.</p></div>
+            <label for="designPrompt">Your design brief<textarea id="designPrompt" name="designPrompt" placeholder="Create a modern kitchen with a large waterfall island using Calacatta Viola marble, full-height splashbacks and warm oak cabinetry."></textarea></label>
+            <div class="stylePicker"><span>Choose a direction</span><div id="styleOptions" class="styleOptions"></div></div>
+            <div class="wizardActions"><button class="btn" type="button" data-back>Back</button><button class="btn btnDark" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="wizardStep" data-step="5" hidden>
+            <div class="stepIntro"><span class="stepLabel">Step 05</span><h3>Choose the material.</h3><p>Explore sample records. Supplier inventory and live slab availability will connect here in a later phase.</p></div>
+            <div class="materialToolbar"><label for="materialCategory">Filter materials<select id="materialCategory"><option value="all">All categories</option><option>Marble</option><option>Granite</option><option>Quartzite</option><option>Travertine</option><option>Onyx</option><option>Porcelain / Sintered Stone</option></select></label><span class="small">Select up to 3 samples</span></div>
+            <div class="materialGrid" id="materials"></div>
+            <div class="wizardActions"><button class="btn" type="button" data-back>Back</button><button class="btn btnDark" type="button" data-next>Review project <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="wizardStep" data-step="6" hidden>
+            <div class="stepIntro"><span class="stepLabel">Step 06</span><h3>Ready to shape the concept?</h3><p>Review your brief, then generate a structured mock concept. No photographs are sent anywhere in this Phase 1 preview.</p></div>
+            <div class="reviewGrid" id="reviewSummary"></div>
+            <div class="honestState"><span aria-hidden="true">◎</span><div><strong>What happens next?</strong><p>The current button prepares a mock SceneSpecification. AI reconstruction, browser 3D and rendered images are not connected yet.</p></div></div>
+            <div class="wizardActions"><button class="btn" type="button" data-back>Back</button><button class="btn btnPrimary" type="button" id="generateDesign">Generate concept <span aria-hidden="true">↗</span></button></div>
+          </section>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="workspace section" id="workspace" hidden>
+    <div class="container">
+      <div class="workspaceHeader"><div><span class="eyebrow">Design workspace</span><h2 id="workspaceTitle">Untitled stone project</h2></div><div class="workspaceStatus"><span class="statusDot"></span><span id="workspaceStatusText">Mock concept ready</span></div></div>
+      <div class="workspaceShell">
+        <aside class="workspaceSidebar leftSidebar"><div class="workspaceSidebarTitle">Project map</div><nav class="workspaceTabs" aria-label="Workspace sections"><button class="active" data-workspace-tab="project">Project</button><button data-workspace-tab="room">Room</button><button data-workspace-tab="measurements">Measurements</button><button data-workspace-tab="materials">Materials</button><button data-workspace-tab="objects">Objects</button><button data-workspace-tab="lighting">Lighting</button><button data-workspace-tab="instructions">Design instructions</button></nav><div class="workspaceSidebarFooter"><span>Version 0.1</span><span>Browser draft</span></div></aside>
+        <section class="designViewport" aria-label="Design viewport placeholder"><div class="viewportToolbar"><span>ORTHOGRAPHIC</span><span>CONCEPT VIEW</span><button type="button" title="Future 3D view">◈</button></div><div class="viewportScene"><div class="viewportRoom"><div class="viewportBackWall"></div><div class="viewportSideWall"></div><div class="viewportFloor"></div><div class="viewportCounter"></div><div class="viewportIsland"></div><div class="viewportSlab"></div></div><div class="viewportAnnotation annotationOne">WATERFALL EDGE</div><div class="viewportAnnotation annotationTwo">NATURAL LIGHT</div><div class="viewportCenterNote"><span>3D viewport</span><strong>Coming in Phase 2</strong><small>Your structured concept is ready for the next layer.</small></div></div><div class="viewportFooter"><span>Scene specification <strong id="sceneVersion">v0.1</strong></span><span>Camera / natural daylight</span></div></section>
+        <aside class="workspaceSidebar rightSidebar"><div class="workspaceSidebarTitle">Selected object</div><div class="selectedObject"><div class="objectPreview"><span></span></div><strong id="selectedObjectName">Room concept</strong><small id="selectedObjectMeta">No object selected</small></div><div class="propertyList"><label>Material <strong id="selectedMaterial">Not selected</strong></label><label>Finish <strong>Concept placeholder</strong></label><label>Dimensions <strong id="selectedDimensions">Add room measurements</strong></label><label>Vein direction <strong>Unspecified</strong></label></div><div class="workspaceActions"><button class="btn btnDark" type="button" id="saveProject">Save project</button><button class="btn" type="button" id="generateRender">Generate render <small>coming soon</small></button><button class="btn btnPrimary" type="button" id="requestQuote">Request a quote</button></div></aside>
+      </div>
+      <div class="workspaceNotice" id="workspaceNotice" role="status" hidden></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container"><div class="footTop"><span class="eyebrow">Natural stone, considered</span><h2>Make the first decision a good one.</h2><p class="lead center">A clear brief makes a better conversation with the people who will craft it.</p><div class="btnRow" style="justify-content:center"><a class="btn btnPrimary" href="contact.html">Talk to a specialist</a><a class="btn" href="work.html">See our work</a></div></div><div class="footBottom"><span>© 2025 Prime Marble Specialists</span><span>London · Marble · Natural Stone · Porcelain</span></div></div></footer>
+</body>
+</html>
