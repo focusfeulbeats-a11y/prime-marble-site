@@ -14,6 +14,7 @@ initNavigation();
 renderProjectTypes();
 renderStyles();
 renderMaterials();
+renderMaterialSamples();
 bindWizard();
 restoreDraft();
 
@@ -66,6 +67,36 @@ function renderMaterials() {
     if (selected) project.materials = project.materials.filter((item) => item.id !== material.id);
     else if (project.materials.length < 3) project.materials.push(material);
     renderMaterials();
+    renderMaterialSamples();
+  }));
+}
+
+function renderMaterialSamples() {
+  const grid = $("#materialsSampleGrid");
+  if (!grid) return;
+
+  grid.innerHTML = MATERIALS.slice(0, 6).map((material) => `
+    <article class="materialSampleCard ${project.materials.some((item) => item.id === material.id) ? "selected" : ""}">
+      <div class="materialSampleImage"><img src="${material.image}" alt="${material.name} sample" width="640" height="420"></div>
+      <div class="materialSampleMeta">
+        <div>
+          <span class="materialSampleCategory">${material.category}</span>
+          <h3>${material.name}</h3>
+        </div>
+        <button type="button" class="btn btnDark" data-sample-material-id="${material.id}">${project.materials.some((item) => item.id === material.id) ? "Selected" : "Choose sample"}</button>
+      </div>
+      <p>${material.description}</p>
+      <small>${material.finish} · ${(Array.isArray(material.thicknesses) ? material.thicknesses : [material.thicknesses]).filter(Boolean).map((value) => `${value} mm`).join(" / ") || "20 mm"}</small>
+    </article>`).join("");
+
+  $$("[data-sample-material-id]").forEach((button) => button.addEventListener("click", () => {
+    const material = MATERIALS.find((item) => item.id === button.dataset.sampleMaterialId);
+    if (!material) return;
+    project.materials = [material];
+    renderMaterials();
+    renderMaterialSamples();
+    showNotice(`${material.name} selected for this design brief.`);
+    $("#designer-app")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }));
 }
 
