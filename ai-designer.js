@@ -1,11 +1,12 @@
 import { MATERIALS, PROJECT_TYPES, STYLES, createEmptyProject } from "./designer/data.js";
 import { generateDesign } from "./designer/ai-design-service.js";
-import { blenderService } from "./designer/blender-service.js";
+import { PrimeMarbleViewer } from "./designer/three-viewer.js";
 
 const project = createEmptyProject();
 let currentStep = 1;
 let selectedUnit = "mm";
 let generatedResult = null;
+let viewer = null;
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
@@ -113,7 +114,13 @@ function bindWizard() {
   }));
   $("#generateDesign").addEventListener("click", handleGenerate);
   $("#saveProject").addEventListener("click", () => { saveDraft(); showNotice("Project saved locally on this device."); });
-  $("#generateRender").addEventListener("click", () => showNotice("Render generation is coming soon. The current workspace contains a mock viewport only."));
+  $("#generateRender").addEventListener("click", () => {
+    if (!viewer || !generatedResult) return showNotice("Generate a 3D concept first.");
+    viewer.downloadPNG(`prime-marble-${project.projectType || "design"}.png`);
+    project.renders.push({ createdAt: new Date().toISOString(), type: "png" }); saveDraft();
+    showNotice("Render exported as a PNG from the current 3D camera view.");
+  });
+  $("#resetCamera").addEventListener("click", () => viewer?.resetCamera(generatedResult?.sceneSpecification));
   $("#requestQuote").addEventListener("click", () => {
     project.quoteRequestStatus = "Ready to package";
     saveDraft();
@@ -195,9 +202,10 @@ async function handleGenerate() {
   generatedResult = await generateDesign(project);
   project.status = "Design Generated";
   project.updatedAt = new Date().toISOString();
-  await blenderService.createScene(generatedResult.sceneSpecification);
+  project.sceneSpecification = generatedResult.sceneSpecification;
   saveDraft();
   updateWorkspace();
+  render3DModel();
   button.disabled = false;
   button.innerHTML = 'Generate concept <span aria-hidden="true">↗</span>';
   $("#workspace").hidden = false;
@@ -208,9 +216,24 @@ function updateWorkspace() {
   const type = PROJECT_TYPES.find((item) => item.id === project.projectType)?.name || "Stone project";
   const material = project.materials[0];
   $("#workspaceTitle").textContent = `${type} concept`;
-  $("#workspaceStatusText").textContent = generatedResult?.status === "mock" ? "Mock concept ready" : "Draft";
+  $("#workspaceStatusText").textContent = generatedResult?.status === "ready" ? "Live 3D concept ready" : "Draft";
   $("#selectedMaterial").textContent = material?.name || "Not selected";
   $("#selectedDimensions").textContent = project.room.width ? `${project.room.width} × ${project.room.length} × ${project.room.height} ${selectedUnit}` : "Add room measurements";
+}
+
+function render3DModel() {
+  if (!generatedResult?.sceneSpecification) return;
+  const container = $("#threeViewport");
+  if (!viewer) viewer = new PrimeMarbleViewer(container, updateSelectedObject);
+  viewer.load(generatedResult.sceneSpecification, project.materials[0]);
+  $("#sceneVersion").textContent = `v${generatedResult.sceneSpecification.version}`;
+}
+
+function updateSelectedObject(obj) {
+  $("#selectedObjectName").textContent = obj.id.replaceAll("-", " ").replace(/\b\w/g, c => c.toUpperCase());
+  $("#selectedObjectMeta").textContent = obj.type || "Scene object";
+  const d = obj.dimensions;
+  if (d) $("#selectedDimensions").textContent = `${Math.round(d.x*1000)} × ${Math.round(d.y*1000)} × ${Math.round(d.z*1000)} mm`;
 }
 
 function saveDraft() {
