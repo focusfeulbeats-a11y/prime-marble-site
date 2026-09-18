@@ -15,9 +15,20 @@
 <script type="importmap">
 {
   "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
   }
 }
+</script>
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-start-designing]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var app = document.getElementById("designer-app");
+      if (app) app.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+});
 </script>
 <script type="module" src="ai-designer.js"></script>
 </head>
