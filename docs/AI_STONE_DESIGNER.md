@@ -68,6 +68,3 @@ npx serve .
 ```
 
 Test the eight project types, photo selection/removal, unit switching, required room measurements, style/material selection, mock generation, workspace panel switching, save-to-browser, and the Request Quote action. Use a mobile viewport to test camera upload and the single-column wizard.
-git add .
-git commit -m "Make Prime Marble 3D designer operational"
-git push origin main
