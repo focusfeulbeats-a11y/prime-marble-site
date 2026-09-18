@@ -199,17 +199,25 @@ async function handleGenerate() {
   const button = $("#generateDesign");
   button.disabled = true;
   button.innerHTML = "Preparing concept…";
-  generatedResult = await generateDesign(project);
-  project.status = "Design Generated";
-  project.updatedAt = new Date().toISOString();
-  project.sceneSpecification = generatedResult.sceneSpecification;
-  saveDraft();
-  updateWorkspace();
-  render3DModel();
-  button.disabled = false;
-  button.innerHTML = 'Generate concept <span aria-hidden="true">↗</span>';
-  $("#workspace").hidden = false;
-  $("#workspace").scrollIntoView({ behavior: "smooth" });
+  try {
+    generatedResult = await generateDesign(project);
+    project.status = "Design Generated";
+    project.updatedAt = new Date().toISOString();
+    project.sceneSpecification = generatedResult.sceneSpecification;
+    saveDraft();
+    updateWorkspace();
+    $("#workspace").hidden = false;
+    render3DModel();
+    $("#workspace").scrollIntoView({ behavior: "smooth" });
+  } catch (error) {
+    console.error("Prime Marble 3D generation failed", error);
+    $("#workspace").hidden = false;
+    showNotice(`3D generation failed: ${error?.message || "Unknown browser error"}. Please refresh and try again.`);
+    $("#workspace").scrollIntoView({ behavior: "smooth" });
+  } finally {
+    button.disabled = false;
+    button.innerHTML = 'Generate concept <span aria-hidden="true">↗</span>';
+  }
 }
 
 function updateWorkspace() {

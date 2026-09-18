@@ -12,6 +12,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="ai-designer.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+  }
+}
+</script>
 <script type="module" src="ai-designer.js"></script>
 </head>
 <body class="designerPage">
@@ -156,9 +163,9 @@
           </section>
 
           <section class="wizardStep" data-step="6" hidden>
-            <div class="stepIntro"><span class="stepLabel">Step 06</span><h3>Ready to shape the concept?</h3><p>Review your brief, then generate a structured mock concept. No photographs are sent anywhere in this Phase 1 preview.</p></div>
+            <div class="stepIntro"><span class="stepLabel">Step 06</span><h3>Ready to shape the concept?</h3><p>Review your brief, then generate a live interactive 3D concept from your measurements, material and design instructions.</p></div>
             <div class="reviewGrid" id="reviewSummary"></div>
-            <div class="honestState"><span aria-hidden="true">◎</span><div><strong>What happens next?</strong><p>The current button prepares a mock SceneSpecification. AI reconstruction, browser 3D and rendered images are not connected yet.</p></div></div>
+            <div class="honestState"><span aria-hidden="true">◎</span><div><strong>What happens next?</strong><p>Generate Concept builds the room and stone elements in the live 3D viewport. Drag to orbit, scroll to zoom, select objects, then export the current view as a PNG render.</p></div></div>
             <div class="wizardActions"><button class="btn" type="button" data-back>Back</button><button class="btn btnPrimary" type="button" id="generateDesign">Generate concept <span aria-hidden="true">↗</span></button></div>
           </section>
         </form>
@@ -168,7 +175,7 @@
 
   <section class="workspace section" id="workspace" hidden>
     <div class="container">
-      <div class="workspaceHeader"><div><span class="eyebrow">Design workspace</span><h2 id="workspaceTitle">Untitled stone project</h2></div><div class="workspaceStatus"><span class="statusDot"></span><span id="workspaceStatusText">Mock concept ready</span></div></div>
+      <div class="workspaceHeader"><div><span class="eyebrow">Design workspace</span><h2 id="workspaceTitle">Untitled stone project</h2></div><div class="workspaceStatus"><span class="statusDot"></span><span id="workspaceStatusText">Ready for 3D</span></div></div>
       <div class="workspaceShell">
         <aside class="workspaceSidebar leftSidebar"><div class="workspaceSidebarTitle">Project map</div><nav class="workspaceTabs" aria-label="Workspace sections"><button class="active" data-workspace-tab="project">Project</button><button data-workspace-tab="room">Room</button><button data-workspace-tab="measurements">Measurements</button><button data-workspace-tab="materials">Materials</button><button data-workspace-tab="objects">Objects</button><button data-workspace-tab="lighting">Lighting</button><button data-workspace-tab="instructions">Design instructions</button></nav><div class="workspaceSidebarFooter"><span>Version 0.1</span><span>Browser draft</span></div></aside>
         <section class="designViewport" aria-label="Interactive 3D design viewport"><div class="viewportToolbar"><span>INTERACTIVE 3D</span><span>DRAG TO ORBIT · SCROLL TO ZOOM</span><button type="button" id="resetCamera" title="Reset camera">⌂ Reset</button></div><div class="viewportScene" id="threeViewport"><div class="viewportLoading">Generate a concept to open the live 3D model.</div></div><div class="viewportFooter"><span>Scene specification <strong id="sceneVersion">v1.0</strong></span><span>WebGL / natural daylight</span></div></section>
