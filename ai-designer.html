@@ -38,6 +38,44 @@
 
 <script type="importmap">
 {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}
+
+async function fileToDataURL(file){
+ return await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});
+}
+async function generateAIConcept(){
+ const btn=$('#generateDesign'); if(!btn)return;
+ const old=btn.textContent; btn.disabled=true; btn.textContent='AI is analysing your room…';
+ try{
+   const images=[];
+   for(const item of roomPhotos.slice(0,4)) images.push(await fileToDataURL(item.file));
+   const payload={
+     projectType:state.type,
+     dimensions:{
+       width:document.querySelector('[name=roomWidth]')?.value||'',
+       length:document.querySelector('[name=roomLength]')?.value||'',
+       height:document.querySelector('[name=roomHeight]')?.value||'',
+       unit:state.unit||'mm'
+     },
+     brief:document.querySelector('[name=designBrief]')?.value||document.querySelector('textarea')?.value||'',
+     material:state.material?.name||state.material||'',
+     images
+   };
+   const res=await fetch('/api/generate-design',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+   const data=await res.json();
+   if(!res.ok) throw new Error(data.error||'AI generation failed');
+   if(data.scene) generated=data.scene;
+   const sec=$('#aiConceptSection'), img=$('#aiConceptImage'), ph=$('#aiConceptPlaceholder');
+   if(sec)sec.hidden=false;
+   if(data.image && img){img.src=`data:image/png;base64,${data.image}`;img.style.display='block';if(ph)ph.style.display='none'}
+   if($('#aiSummary')) $('#aiSummary').textContent=data.summary||'AI room analysis complete.';
+   // Keep the existing interactive 3D renderer as the editable browser view.
+   try{ await generate(); }catch(e){ console.warn('3D preview fallback:',e); }
+   sec?.scrollIntoView({behavior:'smooth'});
+ }catch(e){notice('AI generation error: '+e.message)}
+ finally{btn.disabled=false;btn.textContent=old}
+}
+
+$('#generateDesign')?.addEventListener('click',generateAIConcept);
 </script>
 </head>
 <body class="designerPage">
