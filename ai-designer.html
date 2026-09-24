@@ -143,7 +143,7 @@
           <section class="wizardStep active" data-step="1">
             <div class="stepIntro"><span class="stepLabel">Step 01</span><h3>What are you making?</h3><p>Choose the project that best describes your space. This shapes the first concept brief.</p></div>
             <div class="projectTypeGrid" id="projectTypes"></div>
-            <div class="wizardActions"><span></span><button class="btn btnDark" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div>
+            <p id="wizardMessage" class="formHint" style="min-height:18px;color:#9b4b2a;font-weight:700"></p><div class="wizardActions"><span></span><button class="btn btnDark" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div>
           </section>
 
           <section class="wizardStep" data-step="2" hidden>
@@ -220,16 +220,52 @@ const MATERIALS=[
  {id:'nero',name:'Nero Marquina',category:'Marble',finish:'Polished',base:'#171717',vein:'#e5e2dc'}
 ];
 const state={step:1,type:null,style:null,materials:[],unit:'mm'}; let THREE,OrbitControls,scene,camera,renderer,controls,root,lastSpec;
+function wizardMessage(t=''){const n=$('#wizardMessage');if(n)n.textContent=t}
 function notice(t){const n=$('#workspaceNotice'); if(n){n.textContent=t;n.hidden=false;setTimeout(()=>n.hidden=true,4500)}}
-function showStep(n){state.step=Math.max(1,Math.min(6,n)); $$('.wizardStep').forEach(x=>{let a=+x.dataset.step===state.step;x.hidden=!a;x.classList.toggle('active',a)}); $$('.stepList li').forEach((x,i)=>{x.classList.toggle('active',i+1===state.step);x.classList.toggle('done',i+1<state.step)}); $('#stepCounter').textContent=`0${state.step} / 06`; if(state.step===6) review();}
-function valid(){if(state.step===1&&!state.type){notice('Choose a project type first.');return false} if(state.step===3){for(const n of ['roomWidth','roomLength','roomHeight']){if(!document.querySelector(`[name=${n}]`).value){notice('Add room width, length and ceiling height.');return false}}} return true}
+function showStep(n){wizardMessage('');state.step=Math.max(1,Math.min(6,n)); $$('.wizardStep').forEach(x=>{let a=+x.dataset.step===state.step;x.hidden=!a;x.classList.toggle('active',a)}); $$('.stepList li').forEach((x,i)=>{x.classList.toggle('active',i+1===state.step);x.classList.toggle('done',i+1<state.step)}); $('#stepCounter').textContent=`0${state.step} / 06`; if(state.step===6) review();}
+function valid(){
+ if(state.step===1&&!state.type){wizardMessage('Please choose a project type, then press Continue.');return false}
+ if(state.step===3){
+   for(const n of ['roomWidth','roomLength','roomHeight']){
+     if(!document.querySelector(`[name=${n}]`).value){wizardMessage('Please add room width, length and ceiling height.');return false}
+   }
+ }
+ wizardMessage(''); return true;
+}
 $('#projectTypes').innerHTML=TYPES.map(x=>`<button class="projectTypeCard" type="button" data-type="${x[0]}"><span class="typeIcon">${x[2]}</span><strong>${x[1]}</strong><small>Build a live 3D ${x[1].toLowerCase()} concept.</small></button>`).join('');
-$$('[data-type]').forEach(b=>b.onclick=()=>{state.type=b.dataset.type;$$('[data-type]').forEach(x=>x.classList.toggle('selected',x===b))});
+$$('[data-type]').forEach(b=>b.addEventListener('click',()=>{state.type=b.dataset.type;wizardMessage('');$$('[data-type]').forEach(x=>x.classList.toggle('selected',x===b));}));
 $('#styleOptions').innerHTML=STYLES.map(x=>`<button class="styleOption" type="button" data-style="${x}">${x}</button>`).join('');
 $$('[data-style]').forEach(b=>b.onclick=()=>{state.style=b.dataset.style;$$('[data-style]').forEach(x=>x.classList.toggle('selected',x===b))});
 function materialCards(target,limit=99){const el=$(target); if(!el)return; const arr=MATERIALS.slice(0,limit); el.innerHTML=arr.map(m=>`<button class="materialCard ${state.materials[0]?.id===m.id?'selected':''}" type="button" data-mat="${m.id}"><div style="height:120px;background:${m.base};position:relative;overflow:hidden"><span style="position:absolute;width:150%;height:2px;background:${m.vein};transform:rotate(-18deg);left:-20%;top:48%;opacity:.65"></span><span style="position:absolute;width:130%;height:1px;background:${m.vein};transform:rotate(12deg);left:-10%;top:66%;opacity:.45"></span></div><span class="materialCardBody"><strong>${m.name}</strong><small>${m.category} · ${m.finish}</small></span></button>`).join(''); $$(`${target} [data-mat]`).forEach(b=>b.onclick=()=>{state.materials=[MATERIALS.find(m=>m.id===b.dataset.mat)];materialCards('#materials');materialCards('#materialsSampleGrid',6);});}
+
 materialCards('#materials'); materialCards('#materialsSampleGrid',6);
-$$('[data-next]').forEach(b=>b.onclick=()=>{if(valid())showStep(state.step+1)}); $$('[data-back]').forEach(b=>b.onclick=()=>showStep(state.step-1)); $$('[data-step-button]').forEach(b=>b.onclick=()=>showStep(+b.dataset.stepButton));
+
+/* Room photo upload: local preview only; files never leave the device in this prototype. */
+const photoInput=$('#spacePhotos'), photoPreview=$('#photoPreview'), photoHint=$('#photoHint');
+let roomPhotos=[];
+function renderPhotos(){
+ if(!photoPreview)return;
+ photoPreview.innerHTML='';
+ roomPhotos.forEach((item,i)=>{
+   const cell=document.createElement('div'); cell.className='photoItem';
+   const img=document.createElement('img'); img.src=item.url; img.alt='Room photograph '+(i+1);
+   const remove=document.createElement('button'); remove.type='button'; remove.setAttribute('aria-label','Remove photograph'); remove.textContent='×';
+   remove.addEventListener('click',()=>{URL.revokeObjectURL(item.url);roomPhotos.splice(i,1);renderPhotos()});
+   cell.append(img,remove); photoPreview.appendChild(cell);
+ });
+ if(photoHint)photoHint.textContent=roomPhotos.length?`${roomPhotos.length} photograph${roomPhotos.length===1?'':'s'} selected. You can add up to 10.`:'No photographs selected yet. You can continue without them.';
+}
+photoInput?.addEventListener('change',()=>{
+ const incoming=[...photoInput.files].filter(f=>/^image\/(jpeg|png|webp)$/.test(f.type));
+ const free=Math.max(0,10-roomPhotos.length);
+ incoming.slice(0,free).forEach(file=>roomPhotos.push({file,url:URL.createObjectURL(file)}));
+ photoInput.value='';
+ renderPhotos();
+});
+
+$$('[data-next]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();if(valid())showStep(state.step+1)}));
+$$('[data-back]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();showStep(state.step-1)}));
+$$('[data-step-button]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();showStep(+b.dataset.stepButton)}));
 $$('[data-unit]').forEach(b=>b.onclick=()=>{state.unit=b.dataset.unit;$$('[data-unit]').forEach(x=>x.classList.toggle('active',x===b));$$('.unitLabel').forEach(x=>x.textContent=state.unit)});
 function review(){const v=n=>document.querySelector(`[name=${n}]`)?.value||'—'; $('#reviewSummary').innerHTML=[['Project',TYPES.find(x=>x[0]===state.type)?.[1]||'Not selected'],['Scale',`${v('roomWidth')} × ${v('roomLength')} × ${v('roomHeight')} ${state.unit}`],['Style',state.style||'Not selected'],['Material',state.materials[0]?.name||'Calacatta Viola'],['Brief',$('#designPrompt').value||'No written brief']].map(x=>`<div class="reviewItem"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join('')}
 function mm(v){return +v*({mm:1,cm:10,m:1000}[state.unit]||1)}
