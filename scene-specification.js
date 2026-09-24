@@ -116,8 +116,8 @@ export function createSceneSpecification({ projectId, projectType, room, stoneId
   pushObject({
     id: "kitchen-island-base",
     type: "island",
-    position: { x: islandCenter.x, y: 0.45, z: islandCenter.z },
-    dimensions: { x: islandWidth, y: 0.9, z: islandDepth },
+    position: { x: islandCenter.x, y: 0.9, z: islandCenter.z },
+    dimensions: { x: islandWidth, y: 1.8, z: islandDepth },
     materialId: selectedStone,
     properties: { finish, stoneName, role: "island" }
   });
@@ -125,7 +125,7 @@ export function createSceneSpecification({ projectId, projectType, room, stoneId
   pushObject({
     id: "kitchen-island-top",
     type: "worktop",
-    position: { x: islandCenter.x, y: 0.95, z: islandCenter.z },
+    position: { x: islandCenter.x, y: 1.84, z: islandCenter.z },
     dimensions: { x: islandWidth + 0.12, y: 0.08, z: islandDepth + 0.12 },
     materialId: selectedStone,
     properties: { finish, stoneName, waterfall: /waterfall/i.test(designPrompt || ""), role: "island-top" }
@@ -135,16 +135,16 @@ export function createSceneSpecification({ projectId, projectType, room, stoneId
     pushObject({
       id: "island-waterfall-left",
       type: "waterfall",
-      position: { x: islandCenter.x - islandWidth / 2 - 0.06, y: 0.45, z: islandCenter.z },
-      dimensions: { x: 0.1, y: 0.9, z: islandDepth },
+      position: { x: islandCenter.x - islandWidth / 2 - 0.06, y: 0.9, z: islandCenter.z },
+      dimensions: { x: 0.1, y: 1.8, z: islandDepth },
       materialId: selectedStone,
       properties: { finish, stoneName, role: "waterfall-left" }
     });
     pushObject({
       id: "island-waterfall-right",
       type: "waterfall",
-      position: { x: islandCenter.x + islandWidth / 2 + 0.06, y: 0.45, z: islandCenter.z },
-      dimensions: { x: 0.1, y: 0.9, z: islandDepth },
+      position: { x: islandCenter.x + islandWidth / 2 + 0.06, y: 0.9, z: islandCenter.z },
+      dimensions: { x: 0.1, y: 1.8, z: islandDepth },
       materialId: selectedStone,
       properties: { finish, stoneName, role: "waterfall-right" }
     });
