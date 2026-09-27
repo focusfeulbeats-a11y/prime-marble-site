@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/project-05.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="icon" type="image/png" href="images/favicon.png" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* =========================================================
@@ -78,7 +78,7 @@ header{
   border-bottom:1px solid var(--border);
 }
 .nav{ display:flex; justify-content:space-between; align-items:center; padding:16px 0; gap:14px; }
-.logo img{ width:200px; height:auto; display:block; filter: drop-shadow(0 6px 14px rgba(0,0,0,.10)); }
+.logo img{ width:200px; height:auto; display:block; filter: drop-shadow(0 10px 20px rgba(0,0,0,.06)); }
 .logo{ text-decoration:none; font-family:var(--serif); font-weight:700; font-size:20px; }
 
 nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
@@ -521,10 +521,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 </script>
 </head>
 <body>
+<!-- TEMP REDESIGN START -->
+<section style="min-height:100vh;display:flex;align-items:center;justify-content:center;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('images/hero.jpg') center/cover;
+color:white;text-align:center;padding:2rem">
+<div style="max-width:900px">
+<p style="letter-spacing:4px;color:#ff6a00;font-weight:bold">LONDON'S PREMIUM MARBLE SPECIALISTS</p>
+<h1 style="font-size:clamp(3rem,8vw,5.5rem);line-height:1.05">Luxury Marble,<br>Quartz & Porcelain</h1>
+<p style="font-size:1.25rem">Bespoke fabrication and installation across London.</p>
+<p>
+<a href="work.html" style="padding:16px 32px;background:#ff6a00;color:#fff;border-radius:999px;text-decoration:none;margin-right:12px;">View Projects</a>
+<a href="contact.html" style="padding:16px 32px;border:2px solid #fff;color:#fff;border-radius:999px;text-decoration:none;">Get Free Quote</a>
+</p>
+</div>
+</section>
+<!-- TEMP REDESIGN END -->
+
 <a class="skip" href="#main">Skip to content</a>
 <header>
 <div class="container nav">
-<a class="logo" href="index.html"><img src="images/logo-transparent.png" alt="Prime Marble Specialists"></a>
+<a class="logo" href="index.html"><img src="images/logo.png" alt="Prime Marble Specialists"></a>
 <button class="navToggle" aria-expanded="false" aria-controls="siteMenu">Menu ☰</button>
 <button class="navClose" aria-label="Close menu">✕</button>
 <nav class="menuWrap" id="siteMenu">
@@ -540,7 +556,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 </div>
 </div>
 </div>
-<a href="ai-designer.html">AI Stone Designer</a>
 <a href="work.html">Our Work</a>
 <a href="marble-worktops-london.html">Marble Worktops</a>
 <a href="porcelain-tiling-london.html">Porcelain Tiling</a>
@@ -590,28 +605,15 @@ Precision templating, clean installation, and a refined finish across London & G
 </div>
 </section>
 
-<section class="section" style="padding-top:10px; padding-bottom:60px;">
+<section class="section" style="padding-top:10px; padding-bottom:50px;">
 <div class="container">
-<div class="split reveal" style="align-items:center;">
-<div class="card" style="padding:0; overflow:hidden; position:relative; min-height:360px;">
-<img src="images/project-05.jpg" alt="Prime Marble Specialists craftsmanship" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+<div class="statsBar">
+<div class="statBox reveal"><span class="statNum" data-count="150" data-suffix="+">0</span><span class="statLabel">Projects completed</span></div>
+<div class="statBox reveal"><span class="statNum" data-count="12" data-suffix="+">0</span><span class="statLabel">Years of experience</span></div>
+<div class="statBox reveal"><span class="statNum" data-count="98" data-suffix="%">0</span><span class="statLabel">Client satisfaction</span></div>
+<div class="statBox reveal"><span class="statNum" data-count="24" data-suffix="hr">0</span><span class="statLabel">Avg. response time</span></div>
 </div>
-<div>
-<span class="eyebrow">Who we are</span>
-<h2>A father & son business</h2>
-<p class="lead">Prime Marble Specialists is run by a father and son team with over 25 years' combined experience in stone and tiling.</p>
-<p>We work directly with builders, designers and homeowners across London, and we still price and manage every job ourselves. That keeps quality consistent and communication straightforward.</p>
-<div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-<span class="badge">Family-run</span>
-<span class="badge">Hands-on, every job</span>
-<span class="badge">25+ years in the trade</span>
-</div>
-<div class="btnRow" style="margin-top:20px;">
-<a class="btn btnPrimary" href="#quote">Work with us</a>
-<a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp us directly</a>
-</div>
-</div>
-</div>
+<p class="small center reveal" style="margin-top:14px; max-width:60ch;"><em>(Placeholder figures — swap in your real numbers once confirmed.)</em></p>
 </div>
 </section>
 
@@ -721,8 +723,8 @@ This allows us to focus entirely on precision fitting and on-site finishing — 
 <p class="lead reveal">Clean installation. Precise alignment. Professional finishing. Drag the slider or click anywhere on the image.</p>
 <div class="beforeAfter reveal">
 <div class="ba-wrap">
-<img src="before.jpg" alt="Before installation" class="ba-before">
-<img src="after.jpg" alt="After installation" class="ba-after">
+<img src="images/before.jpg" alt="Before installation" class="ba-before">
+<img src="images/after.jpg" alt="After installation" class="ba-after">
 <div class="ba-slider" aria-hidden="true"></div>
 </div>
 </div>
@@ -757,27 +759,36 @@ This allows us to focus entirely on precision fitting and on-site finishing — 
 
 <hr class="sep">
 
-<!-- WHY CHOOSE US -->
+<!-- TESTIMONIALS -->
 <section class="section">
 <div class="container">
-<span class="eyebrow reveal">Why work with us</span>
-<h2 class="reveal">What you get with a family-run team</h2>
-<p class="lead reveal">No call centre, no handing your job to a stranger — here's what that actually means day to day.</p>
-<div class="cardGrid">
-<div class="card reveal">
-<div class="cardIcon">◆</div>
-<h3>Personally overseen</h3>
-<p>One of us is on your job from quote to completion — not a rotating cast of subcontractors you've never spoken to.</p>
+<span class="eyebrow reveal">Client reviews</span>
+<h2 class="reveal">What London homeowners say</h2>
+<p class="lead reveal">Real feedback from recent kitchen, bathroom and tiling projects. <em>(Placeholder reviews — swap in your own once you have them.)</em></p>
+<div class="testiGrid">
+<div class="testi reveal">
+<div class="stars">★★★★★</div>
+<p class="quoteText">"Fitted our Calacatta worktop in a day and the seams are almost invisible. Turned up on time, cleaned up after themselves — couldn't ask for more."</p>
+<div class="testiWho">
+<div class="testiAvatar">S</div>
+<div><strong>Sarah M.</strong><span>Kitchen worktop, Clapham</span></div>
 </div>
-<div class="card reveal">
-<div class="cardIcon">◇</div>
-<h3>Honest, straightforward pricing</h3>
-<p>No inflated showroom markups. You're paying for the work and the material — not overheads that don't benefit you.</p>
 </div>
-<div class="card reveal">
-<div class="cardIcon">⬡</div>
-<h3>25+ years of getting it right</h3>
-<p>Two decades and more of hands-on experience means we've seen most problems before — and know how to avoid them on your job.</p>
+<div class="testi reveal">
+<div class="stars">★★★★★</div>
+<p class="quoteText">"We used them for a full bathroom re-tile in porcelain. Every line is dead straight and the grout work is genuinely the neatest I've seen."</p>
+<div class="testiWho">
+<div class="testiAvatar">D</div>
+<div><strong>David R.</strong><span>Bathroom tiling, Ealing</span></div>
+</div>
+</div>
+<div class="testi reveal">
+<div class="stars">★★★★★</div>
+<p class="quoteText">"As a builder I need contractors who show up and communicate. These guys did both, and the finish on the feature wall sold the whole renovation."</p>
+<div class="testiWho">
+<div class="testiAvatar">M</div>
+<div><strong>Marcus T.</strong><span>Trade / feature wall, Islington</span></div>
+</div>
 </div>
 </div>
 </div>
