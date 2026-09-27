@@ -515,6 +515,76 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   "areaServed": "London"
 }
 </script>
+<style>
+/* Prime Marble — premium mobile refinement (2026-09) */
+@media (max-width: 640px){
+  html{ -webkit-text-size-adjust:100%; overflow-x:hidden; }
+  body{ overflow-x:hidden; padding-bottom:calc(76px + env(safe-area-inset-bottom)); }
+  .container{ width:calc(100% - 36px); max-width:none; }
+  header{ background:rgba(255,255,255,.94); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+  .nav{ min-height:68px; padding:10px 0; }
+  .logo img{ width:138px; max-height:48px; object-fit:contain; }
+  .navToggle{ min-width:48px; min-height:44px; padding:10px 12px; font-size:14px; box-shadow:none; }
+
+  h1{ font-size:clamp(38px,11vw,50px); line-height:.98; letter-spacing:-1.5px; margin:16px 0 18px; }
+  h2{ font-size:clamp(29px,8vw,36px); line-height:1.08; letter-spacing:-.8px; }
+  h3{ line-height:1.18; }
+  .lead{ font-size:16.5px; line-height:1.62; }
+  .eyebrow{ font-size:11.5px; letter-spacing:1.5px; }
+
+  .hero{ min-height:600px; display:flex; align-items:flex-end; }
+  .hero::after{ height:100%; min-height:600px; background-position:center center; }
+  .hero .heroGrid{ width:100%; padding:96px 0 30px; }
+  .hero .badge{ font-size:12.5px; padding:7px 10px; }
+  .hero .lead{ max-width:34ch; font-size:16px; line-height:1.55; }
+  .hero .btnRow{ display:grid; grid-template-columns:1fr; gap:10px; margin-top:22px; }
+  .hero .btn{ width:100%; min-height:52px; padding:14px 16px; box-shadow:none; }
+  .hero .kpis{ grid-template-columns:1fr 1fr; gap:9px; margin-top:18px; }
+  .hero .kpi{ padding:12px; border-radius:14px; box-shadow:none; }
+  .hero .kpi strong{ font-size:14px; }
+  .hero .kpi span{ font-size:12px; margin-top:4px; }
+
+  .section{ padding:64px 0; }
+  .section + .section{ padding-top:54px; }
+  .cardGrid,.cardGrid.cols2,.testiGrid,.blogGrid,.split,.quote{ gap:14px; margin-top:22px; }
+  .card,.testi{ padding:20px; border-radius:16px; box-shadow:0 10px 26px rgba(0,0,0,.06); }
+  .card:hover,.testi:hover,.gItem:hover{ transform:none; }
+  .cardIcon{ width:42px; height:42px; border-radius:12px; }
+
+  .gallery{ grid-template-columns:1fr; gap:14px; margin-top:22px; }
+  .gItem{ border-radius:16px; box-shadow:0 10px 26px rgba(0,0,0,.07); }
+  .gItem img{ height:auto; aspect-ratio:4/3; object-fit:cover; }
+  .cap{ padding:12px 14px; font-size:13.5px; }
+
+  .statsBar{ grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; }
+  .statBox{ padding:20px 8px; border-radius:16px; box-shadow:none; }
+  .statNum{ font-size:32px; }
+  .statLabel{ font-size:12px; }
+
+  .pageHero{ padding:44px 0 38px; min-height:310px; display:flex; align-items:flex-end; background-position:center; }
+  .pageHero h1{ font-size:clamp(34px,10vw,44px); line-height:1.02; }
+  .pageHero .lead{ font-size:16px; line-height:1.55; }
+
+  .menuWrap{ padding:88px 22px 96px; justify-content:flex-start; }
+  .menuWrap a{ font-size:19px; min-height:50px; display:flex; align-items:center; justify-content:center; }
+  .menuWrap .drop .panel{ max-height:42vh; overflow:auto; }
+
+  .mobileCtaBar{ gap:8px; padding:9px 10px calc(9px + env(safe-area-inset-bottom)); }
+  .mobileCtaBar a{ min-height:50px; display:flex; align-items:center; justify-content:center; border-radius:12px; font-size:14px; box-shadow:none; }
+
+  footer{ padding:48px 0 calc(28px + env(safe-area-inset-bottom)); }
+  .footGrid{ grid-template-columns:1fr; gap:22px; margin-top:34px; }
+  .footBottom{ margin-top:28px; padding-top:20px; }
+  input,textarea,select{ font-size:16px; }
+  .btn{ min-height:48px; }
+}
+@media (max-width: 380px){
+  .container{ width:calc(100% - 28px); }
+  .hero .kpis,.statsBar{ grid-template-columns:1fr; }
+  .logo img{ width:126px; }
+}
+
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
