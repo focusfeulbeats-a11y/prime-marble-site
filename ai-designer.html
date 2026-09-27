@@ -36,47 +36,6 @@
 
 
 
-<script type="importmap">
-{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}
-
-async function fileToDataURL(file){
- return await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});
-}
-async function generateAIConcept(){
- const btn=$('#generateDesign'); if(!btn)return;
- const old=btn.textContent; btn.disabled=true; btn.textContent='AI is analysing your room…';
- try{
-   const images=[];
-   for(const item of roomPhotos.slice(0,4)) images.push(await fileToDataURL(item.file));
-   const payload={
-     projectType:state.type,
-     dimensions:{
-       width:document.querySelector('[name=roomWidth]')?.value||'',
-       length:document.querySelector('[name=roomLength]')?.value||'',
-       height:document.querySelector('[name=roomHeight]')?.value||'',
-       unit:state.unit||'mm'
-     },
-     brief:document.querySelector('[name=designBrief]')?.value||document.querySelector('textarea')?.value||'',
-     material:state.material?.name||state.material||'',
-     images
-   };
-   const res=await fetch('/api/generate-design',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-   const data=await res.json();
-   if(!res.ok) throw new Error(data.error||'AI generation failed');
-   if(data.scene) generated=data.scene;
-   const sec=$('#aiConceptSection'), img=$('#aiConceptImage'), ph=$('#aiConceptPlaceholder');
-   if(sec)sec.hidden=false;
-   if(data.image && img){img.src=`data:image/png;base64,${data.image}`;img.style.display='block';if(ph)ph.style.display='none'}
-   if($('#aiSummary')) $('#aiSummary').textContent=data.summary||'AI room analysis complete.';
-   // Keep the existing interactive 3D renderer as the editable browser view.
-   try{ await generate(); }catch(e){ console.warn('3D preview fallback:',e); }
-   sec?.scrollIntoView({behavior:'smooth'});
- }catch(e){notice('AI generation error: '+e.message)}
- finally{btn.disabled=false;btn.textContent=old}
-}
-
-$('#generateDesign')?.addEventListener('click',generateAIConcept);
-</script>
 </head>
 <body class="designerPage">
 <a class="skip" href="#main">Skip to content</a>
@@ -181,7 +140,7 @@ $('#generateDesign')?.addEventListener('click',generateAIConcept);
           <section class="wizardStep active" data-step="1">
             <div class="stepIntro"><span class="stepLabel">Step 01</span><h3>What are you making?</h3><p>Choose the project that best describes your space. This shapes the first concept brief.</p></div>
             <div class="projectTypeGrid" id="projectTypes"></div>
-            <p id="wizardMessage" class="formHint" style="min-height:18px;color:#9b4b2a;font-weight:700"></p><div class="wizardActions"><span></span><button class="btn btnDark" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div>
+            <div class="wizardActions"><span></span><button class="btn btnDark" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div>
           </section>
 
           <section class="wizardStep" data-step="2" hidden>
@@ -258,56 +217,20 @@ const MATERIALS=[
  {id:'nero',name:'Nero Marquina',category:'Marble',finish:'Polished',base:'#171717',vein:'#e5e2dc'}
 ];
 const state={step:1,type:null,style:null,materials:[],unit:'mm'}; let THREE,OrbitControls,scene,camera,renderer,controls,root,lastSpec;
-function wizardMessage(t=''){const n=$('#wizardMessage');if(n)n.textContent=t}
 function notice(t){const n=$('#workspaceNotice'); if(n){n.textContent=t;n.hidden=false;setTimeout(()=>n.hidden=true,4500)}}
-function showStep(n){wizardMessage('');state.step=Math.max(1,Math.min(6,n)); $$('.wizardStep').forEach(x=>{let a=+x.dataset.step===state.step;x.hidden=!a;x.classList.toggle('active',a)}); $$('.stepList li').forEach((x,i)=>{x.classList.toggle('active',i+1===state.step);x.classList.toggle('done',i+1<state.step)}); $('#stepCounter').textContent=`0${state.step} / 06`; if(state.step===6) review();}
-function valid(){
- if(state.step===1&&!state.type){wizardMessage('Please choose a project type, then press Continue.');return false}
- if(state.step===3){
-   for(const n of ['roomWidth','roomLength','roomHeight']){
-     if(!document.querySelector(`[name=${n}]`).value){wizardMessage('Please add room width, length and ceiling height.');return false}
-   }
- }
- wizardMessage(''); return true;
-}
+function showStep(n){state.step=Math.max(1,Math.min(6,n)); $$('.wizardStep').forEach(x=>{let a=+x.dataset.step===state.step;x.hidden=!a;x.classList.toggle('active',a)}); $$('.stepList li').forEach((x,i)=>{x.classList.toggle('active',i+1===state.step);x.classList.toggle('done',i+1<state.step)}); $('#stepCounter').textContent=`0${state.step} / 06`; if(state.step===6) review();}
+function valid(){if(state.step===1&&!state.type){notice('Choose a project type first.');return false} if(state.step===3){for(const n of ['roomWidth','roomLength','roomHeight']){if(!document.querySelector(`[name=${n}]`).value){notice('Add room width, length and ceiling height.');return false}}} return true}
 $('#projectTypes').innerHTML=TYPES.map(x=>`<button class="projectTypeCard" type="button" data-type="${x[0]}"><span class="typeIcon">${x[2]}</span><strong>${x[1]}</strong><small>Build a live 3D ${x[1].toLowerCase()} concept.</small></button>`).join('');
-$$('[data-type]').forEach(b=>b.addEventListener('click',()=>{state.type=b.dataset.type;wizardMessage('');$$('[data-type]').forEach(x=>x.classList.toggle('selected',x===b));}));
+$$('[data-type]').forEach(b=>b.onclick=()=>{state.type=b.dataset.type;$$('[data-type]').forEach(x=>x.classList.toggle('selected',x===b))});
 $('#styleOptions').innerHTML=STYLES.map(x=>`<button class="styleOption" type="button" data-style="${x}">${x}</button>`).join('');
 $$('[data-style]').forEach(b=>b.onclick=()=>{state.style=b.dataset.style;$$('[data-style]').forEach(x=>x.classList.toggle('selected',x===b))});
 function materialCards(target,limit=99){const el=$(target); if(!el)return; const arr=MATERIALS.slice(0,limit); el.innerHTML=arr.map(m=>`<button class="materialCard ${state.materials[0]?.id===m.id?'selected':''}" type="button" data-mat="${m.id}"><div style="height:120px;background:${m.base};position:relative;overflow:hidden"><span style="position:absolute;width:150%;height:2px;background:${m.vein};transform:rotate(-18deg);left:-20%;top:48%;opacity:.65"></span><span style="position:absolute;width:130%;height:1px;background:${m.vein};transform:rotate(12deg);left:-10%;top:66%;opacity:.45"></span></div><span class="materialCardBody"><strong>${m.name}</strong><small>${m.category} · ${m.finish}</small></span></button>`).join(''); $$(`${target} [data-mat]`).forEach(b=>b.onclick=()=>{state.materials=[MATERIALS.find(m=>m.id===b.dataset.mat)];materialCards('#materials');materialCards('#materialsSampleGrid',6);});}
-
 materialCards('#materials'); materialCards('#materialsSampleGrid',6);
-
-/* Room photo upload: local preview only; files never leave the device in this prototype. */
-const photoInput=$('#spacePhotos'), photoPreview=$('#photoPreview'), photoHint=$('#photoHint');
-let roomPhotos=[];
-function renderPhotos(){
- if(!photoPreview)return;
- photoPreview.innerHTML='';
- roomPhotos.forEach((item,i)=>{
-   const cell=document.createElement('div'); cell.className='photoItem';
-   const img=document.createElement('img'); img.src=item.url; img.alt='Room photograph '+(i+1);
-   const remove=document.createElement('button'); remove.type='button'; remove.setAttribute('aria-label','Remove photograph'); remove.textContent='×';
-   remove.addEventListener('click',()=>{URL.revokeObjectURL(item.url);roomPhotos.splice(i,1);renderPhotos()});
-   cell.append(img,remove); photoPreview.appendChild(cell);
- });
- if(photoHint)photoHint.textContent=roomPhotos.length?`${roomPhotos.length} photograph${roomPhotos.length===1?'':'s'} selected. You can add up to 10.`:'No photographs selected yet. You can continue without them.';
-}
-photoInput?.addEventListener('change',()=>{
- const incoming=[...photoInput.files].filter(f=>/^image\/(jpeg|png|webp)$/.test(f.type));
- const free=Math.max(0,10-roomPhotos.length);
- incoming.slice(0,free).forEach(file=>roomPhotos.push({file,url:URL.createObjectURL(file)}));
- photoInput.value='';
- renderPhotos();
-});
-
-$$('[data-next]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();if(valid())showStep(state.step+1)}));
-$$('[data-back]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();showStep(state.step-1)}));
-$$('[data-step-button]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();showStep(+b.dataset.stepButton)}));
+$$('[data-next]').forEach(b=>b.onclick=()=>{if(valid())showStep(state.step+1)}); $$('[data-back]').forEach(b=>b.onclick=()=>showStep(state.step-1)); $$('[data-step-button]').forEach(b=>b.onclick=()=>showStep(+b.dataset.stepButton));
 $$('[data-unit]').forEach(b=>b.onclick=()=>{state.unit=b.dataset.unit;$$('[data-unit]').forEach(x=>x.classList.toggle('active',x===b));$$('.unitLabel').forEach(x=>x.textContent=state.unit)});
 function review(){const v=n=>document.querySelector(`[name=${n}]`)?.value||'—'; $('#reviewSummary').innerHTML=[['Project',TYPES.find(x=>x[0]===state.type)?.[1]||'Not selected'],['Scale',`${v('roomWidth')} × ${v('roomLength')} × ${v('roomHeight')} ${state.unit}`],['Style',state.style||'Not selected'],['Material',state.materials[0]?.name||'Calacatta Viola'],['Brief',$('#designPrompt').value||'No written brief']].map(x=>`<div class="reviewItem"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join('')}
 function mm(v){return +v*({mm:1,cm:10,m:1000}[state.unit]||1)}
-async function load3D(){if(THREE)return; $('#workspaceStatusText').textContent='Loading 3D engine…'; try{THREE=await import('three'); ({OrbitControls}=await import('three/addons/controls/OrbitControls.js'));}catch(e){throw new Error('3D library could not load. Check internet/content blockers and refresh. '+e.message)}}
+async function load3D(){if(THREE)return; $('#workspaceStatusText').textContent='Loading 3D engine…'; try{THREE=await import('https://esm.sh/three@0.170.0'); ({OrbitControls}=await import('https://esm.sh/three@0.170.0/examples/jsm/controls/OrbitControls.js'));}catch(e){throw new Error('3D library could not load. Check internet/content blockers and refresh. '+e.message)}}
 function stoneMaterial(m){const c=document.createElement('canvas');c.width=c.height=512;const x=c.getContext('2d');x.fillStyle=m.base;x.fillRect(0,0,512,512);for(let i=0;i<12;i++){x.strokeStyle=m.vein+(i%2?'88':'55');x.lineWidth=1+(i%3);x.beginPath();let y=20+i*42;x.moveTo(-20,y);for(let xx=0;xx<550;xx+=45){y+=Math.sin((xx+i*41)/55)*8;x.lineTo(xx,y)}x.stroke()}const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return new THREE.MeshStandardMaterial({map:t,roughness:.28})}
 function addBox(name,size,pos,mat,type){const mesh=new THREE.Mesh(new THREE.BoxGeometry(...size),mat);mesh.position.set(...pos);mesh.castShadow=mesh.receiveShadow=true;mesh.userData={name,type,size};root.add(mesh);return mesh}
 function build(){const w=Math.max(2,mm(document.querySelector('[name=roomWidth]').value)/1000),l=Math.max(2,mm(document.querySelector('[name=roomLength]').value)/1000),h=Math.max(2,mm(document.querySelector('[name=roomHeight]').value)/1000); const m=state.materials[0]||MATERIALS[0]; lastSpec={w,l,h}; const vp=$('#threeViewport');vp.innerHTML=''; scene=new THREE.Scene();scene.background=new THREE.Color(0x302d29);camera=new THREE.PerspectiveCamera(48,1,.01,100);renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.outputColorSpace=THREE.SRGBColorSpace;vp.appendChild(renderer.domElement);controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.target.set(0,.8,0);root=new THREE.Group();scene.add(root);scene.add(new THREE.HemisphereLight(0xfff5e8,0x40454d,2.2));const sun=new THREE.DirectionalLight(0xffffff,3.5);sun.position.set(4,7,5);sun.castShadow=true;scene.add(sun);const wall=new THREE.MeshStandardMaterial({color:0xe6dfd4,roughness:.85}),wood=new THREE.MeshStandardMaterial({color:0x705b4d,roughness:.6}),floor=new THREE.MeshStandardMaterial({color:0x9b826c,roughness:.75}),stone=stoneMaterial(m),black=new THREE.MeshStandardMaterial({color:0x111111,roughness:.2}); addBox('Floor',[w,.05,l],[0,-.025,0],floor,'floor');addBox('Back wall',[w,h,.06],[0,h/2,-l/2],wall,'wall');addBox('Side wall',[.06,h,l],[-w/2,h/2,0],wall,'wall'); if(state.type?.includes('bathroom')){addBox('Vanity',[Math.min(1.8,w*.55),.78,.55],[0,.39,-l/2+.35],wood,'vanity');addBox('Stone vanity top',[Math.min(1.9,w*.58),.035,.62],[0,.80,-l/2+.35],stone,'stone');} else if(state.type==='feature-wall'){addBox('Feature stone wall',[Math.min(w*.8,3),Math.min(h*.85,2.5),.045],[0,h*.48,-l/2+.05],stone,'stone');} else {const run=Math.min(w*.82,3.4);addBox('Base cabinets',[run,.88,.62],[0,.44,-l/2+.34],wood,'cabinet');addBox('Stone worktop',[run+.08,.035,.68],[0,.90,-l/2+.34],stone,'stone'); if(state.type==='kitchen-island'||state.type==='kitchen-worktops'){const iw=Math.min(2.4,w*.55),iz=Math.min(1.05,l*.3);addBox('Island cabinets',[iw,.88,iz],[0,.44,.35],wood,'island');addBox('Waterfall island top',[iw+.08,.04,iz+.08],[0,.91,.35],stone,'stone');addBox('Hob',[.58,.025,.42],[.35,.94,.35],black,'hob');}}
