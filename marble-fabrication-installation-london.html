@@ -39,8 +39,7 @@ body{
   font-family:var(--sans);
   color:var(--dark);
   background:
-    linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)),
-    url("images/marble-bg.jpg") center/cover fixed no-repeat;
+    linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93));
 }
 a{color:inherit}
 img{max-width:100%}
@@ -149,7 +148,7 @@ hr.sep{ border:0; height:1px; background: rgba(0,0,0,.08); margin:0; }
 }
 .heroCard::before{
   content:""; position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.62)), var(--heroImg, url("images/project-05.jpg")) center/cover no-repeat;
+  background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.62)), var(--heroImg, url("images/project-05.webp")) center/cover no-repeat;
   transform: scale(1.02);
 }
 .heroCardInner{ position:relative; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding:18px; color:#fff; }
@@ -166,7 +165,7 @@ hr.sep{ border:0; height:1px; background: rgba(0,0,0,.08); margin:0; }
   padding:56px 0 46px;
   background:
     linear-gradient(180deg, rgba(12,12,12,.72), rgba(12,12,12,.55)),
-    var(--pageHeroImg, url("images/project-05.jpg")) center/cover no-repeat;
+    var(--pageHeroImg, url("images/project-05.webp")) center/cover no-repeat;
   color:#fff;
 }
 .pageHero .breadcrumb{ font-size:13px; opacity:.85; margin-bottom:10px; }
@@ -444,7 +443,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     content:""; position:absolute; inset:0; height:640px;
     background:
       linear-gradient(180deg, rgba(10,8,6,.35) 0%, rgba(10,8,6,.55) 55%, rgba(10,8,6,.94) 100%),
-      var(--heroImg, url("images/project-05.jpg")) center/cover no-repeat;
+      var(--heroImg, url("images/project-05.webp")) center/cover no-repeat;
     z-index:0;
   }
   .hero .heroGrid{ display:block; padding:118px 0 36px; }
@@ -510,10 +509,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media(max-width:760px){.intentGrid{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": ["HomeAndConstructionBusiness", "ProfessionalService"], "name": "Prime Marble Specialists", "url": "https://primemarbletiling.co.uk/", "telephone": "+447979515900", "areaServed": {"@type": "City", "name": "London"}, "description": "Specialist marble and natural-stone installation and finishing across London, coordinating fabrication through trusted workshop partners and working with customer-supplied stone.", "knowsAbout": ["Marble fabrication", "Natural stone installation", "Marble installation", "Stone finishing", "Marble polishing", "Customer-supplied stone", "Stone staircases", "Marble bathrooms", "Feature walls", "Worktops and vanities"]}
+{"@context": "https://schema.org", "@type": ["HomeAndConstructionBusiness", "ProfessionalService"], "@id": "https://primemarbletiling.co.uk/#business", "name": "Prime Marble Specialists", "url": "https://primemarbletiling.co.uk/", "telephone": "+447979515900", "areaServed": {"@type": "City", "name": "London"}, "description": "Specialist marble and natural-stone installation and finishing across London, coordinating fabrication through trusted workshop partners and working with customer-supplied stone.", "knowsAbout": ["Marble fabrication", "Natural stone installation", "Marble installation", "Stone finishing", "Marble polishing", "Customer-supplied stone", "Stone staircases", "Marble bathrooms", "Feature walls", "Worktops and vanities"]}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Service", "name": "Marble and Natural Stone Fabrication & Installation", "provider": {"@type": "Organization", "name": "Prime Marble Specialists", "url": "https://primemarbletiling.co.uk/"}, "areaServed": {"@type": "City", "name": "London"}, "description": "Fabrication coordination, finishing and installation of marble and natural stone, including material already purchased or supplied by the customer."}
+{"@context": "https://schema.org", "@type": "Service", "name": "Marble and Natural Stone Fabrication & Installation", "provider": {"@id": "https://primemarbletiling.co.uk/#business"}, "areaServed": {"@type": "City", "name": "London"}, "description": "Fabrication coordination, finishing and installation of marble and natural stone, including material already purchased or supplied by the customer."}
 </script>
 <style>
 /* Prime Marble — premium mobile refinement (2026-09) */
@@ -592,7 +591,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <header>
   <div class="container nav">
     <a class="logo" href="index.html"><img src="images/logo-transparent.png" alt="Prime Marble Specialists"></a>
-    <nav class="menuWrap">
+    <button class="navToggle" type="button" aria-expanded="false" aria-controls="siteMenu">Menu ☰</button>
+    <button class="navClose" type="button" aria-label="Close menu">✕</button>
+    <nav class="menuWrap" id="siteMenu">
       <a href="index.html">Home</a>
       <a href="work.html">Our Work</a>
       <a href="marble-fabrication-installation-london.html">Fabrication & Installation</a>
@@ -633,4 +634,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 </div></section>
 </main>
 <footer><div class="container"><div class="footBottom"><span>© 2026 Prime Marble Specialists</span><span>London · Marble · Natural Stone · Porcelain</span></div></div></footer>
+
+<div class="mobileCtaBar" aria-label="Quick contact">
+  <a class="btn btnPrimary" href="tel:+447979515900">Call Prime Marble</a>
+  <a class="btn btnDark" href="https://wa.me/447979515900">WhatsApp photos</a>
+</div>
+
+<script>
+/* PRIME MARBLE MOBILE NAV */
+(function () {
+  const toggle = document.querySelector('.navToggle');
+  const menu = document.querySelector('.menuWrap');
+  const closeButton = document.querySelector('.navClose');
+  if (!toggle || !menu) return;
+  const setOpen = (open) => {
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  closeButton?.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setOpen(false); });
+  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+    if (window.matchMedia('(max-width: 980px)').matches) setOpen(false);
+  }));
+})();
+</script>
 </body></html>

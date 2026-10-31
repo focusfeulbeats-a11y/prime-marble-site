@@ -25,8 +25,7 @@ body{
   font-family:var(--sans);
   color:var(--dark);
   background:
-    linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)),
-    url("images/marble-bg.jpg") center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93));
 }
 a{color:inherit}
 img{max-width:100%}
@@ -135,7 +134,7 @@ hr.sep{ border:0; height:1px; background: rgba(0,0,0,.08); margin:0; }
 }
 .heroCard::before{
   content:""; position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.62)), var(--heroImg, url("images/project-05.jpg")) center/cover no-repeat;
+  background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.62)), var(--heroImg, url("images/project-05.webp")) center/cover no-repeat;
   transform: scale(1.02);
 }
 .heroCardInner{ position:relative; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding:18px; color:#fff; }
@@ -152,7 +151,7 @@ hr.sep{ border:0; height:1px; background: rgba(0,0,0,.08); margin:0; }
   padding:56px 0 46px;
   background:
     linear-gradient(180deg, rgba(12,12,12,.72), rgba(12,12,12,.55)),
-    var(--pageHeroImg, url("images/project-05.jpg")) center/cover no-repeat;
+    var(--pageHeroImg, url("images/project-05.webp")) center/cover no-repeat;
   color:#fff;
 }
 .pageHero .breadcrumb{ font-size:13px; opacity:.85; margin-bottom:10px; }
@@ -430,7 +429,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     content:""; position:absolute; inset:0; height:640px;
     background:
       linear-gradient(180deg, rgba(10,8,6,.35) 0%, rgba(10,8,6,.55) 55%, rgba(10,8,6,.94) 100%),
-      var(--heroImg, url("images/project-05.jpg")) center/cover no-repeat;
+      var(--heroImg, url("images/project-05.webp")) center/cover no-repeat;
     z-index:0;
   }
   .hero .heroGrid{ display:block; padding:118px 0 36px; }
