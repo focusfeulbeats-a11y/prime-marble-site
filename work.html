@@ -213,6 +213,13 @@ a.card:hover h3::after{ opacity:1; transform:translateX(0); }
 }
 .gItem:hover{transform: translateY(-6px); box-shadow: var(--shadow)}
 .gItem img{ width:100%; height:280px; object-fit:cover; display:block; transition: transform .35s ease; }
+/* Botanical art-and-nature portfolio feature */
+.gallery .botanical-pair{grid-column:span 2;}
+.botanical-pair .pair-images{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#17231f;overflow:hidden;}
+.botanical-pair .pair-images img{height:300px;min-width:0;object-fit:cover;}
+.botanical-pair .cap{padding:13px 15px;}
+@media(max-width:760px){.gallery .botanical-pair{grid-column:span 1;} .botanical-pair .pair-images img{height:clamp(170px,42vw,230px);}}
+
 .gItem:hover img{transform: scale(1.03)}
 .cap{padding:10px 12px; font-size:14px; color:var(--muted); font-family:var(--sans); letter-spacing:0; display:flex; justify-content:space-between; align-items:center; gap:8px}
 .cap .tag{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.6px; color:var(--orange); background:rgba(255,106,0,.1); padding:3px 8px; border-radius:999px; white-space:nowrap }
@@ -637,6 +644,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <div class="gItem reveal" data-cat="bathroom"><img src="images/project-04.webp" data-full="images/project-04.webp" alt="Shower feature stonework in London" loading="lazy" tabindex="0"><div class="cap"><span>Shower feature wall</span><span class="tag">Bathroom</span></div></div>
 <div class="gItem reveal" data-cat="feature"><img src="images/project-05.webp" data-full="images/project-05.webp" alt="Backlit onyx feature wall in London" loading="lazy" tabindex="0"><div class="cap"><span>Backlit onyx feature</span><span class="tag">Feature wall</span></div></div>
 <div class="gItem reveal" data-cat="kitchen"><img src="images/project-06.webp" data-full="images/project-06.webp" alt="Vanity or worktop installation in London" loading="lazy" tabindex="0"><div class="cap"><span>Vanity / worktop</span><span class="tag">Kitchen</span></div></div>
+<div class="gItem reveal botanical-pair" data-cat="feature">
+  <div class="pair-images">
+    <img src="images/botanical-tile-detail.webp" data-full="images/botanical-tile-detail.webp" alt="Decorative tile with deep green botanical forms and blue patterned detail" loading="lazy" tabindex="0">
+    <img src="images/bird-of-paradise-inspiration.webp" data-full="images/bird-of-paradise-inspiration.webp" alt="Orange bird of paradise flowers beside a tiled outdoor walkway" loading="lazy" tabindex="0">
+  </div>
+  <div class="cap"><span>Art &amp; nature — botanical tile detail</span><span class="tag">Craft &amp; detail</span></div>
+</div>
+</div>
 </div>
 </div>
 </section>
