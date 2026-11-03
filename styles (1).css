@@ -25,7 +25,8 @@ body{
   background:
     radial-gradient(900px 520px at 20% 10%, rgba(255,106,0,.10), transparent 55%),
     radial-gradient(900px 520px at 90% 20%, rgba(255,154,61,.08), transparent 60%),
-    linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90));
+    linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
+    url("images/marble-bg.jpg") center/cover fixed no-repeat;
 }
 
 a{color:inherit}
@@ -251,7 +252,7 @@ hr.sep{
   position:absolute; inset:0;
   background:
     linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.66)),
-    url("images/project-05.webp") center/cover no-repeat;
+    url("images/project-05.jpg") center/cover no-repeat;
   transform: scale(1.02);
 }
 .heroCardInner{
